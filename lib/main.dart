@@ -1,4 +1,4 @@
-import 'package:fitness_mobile_app/screens/welcome_screen_one.dart';
+import 'package:fitness_mobile_app/screens/welcome_screen_two.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,8 @@ class FitnessMobileApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fitness Mobile App',
-      home: WelcomeScreenOne(),
+      debugShowCheckedModeBanner: false,
+      home: WelcomeScreenTwo(),
     );
   }
 }

@@ -1,6 +1,4 @@
-// import 'package:fitness_mobile_app/screens/register_page.dart';
-import 'package:fitness_mobile_app/widgets/register_page_widget.dart';
-// import 'package:fitness_mobile_app/screens/welcome_screen_two.dart';
+import 'package:fitness_mobile_app/screens/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +17,7 @@ class FitnessMobileApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme()
       ),
-      home: RegisterPageWidget(),
+      home: RegisterPage(),
     );
   }
 }

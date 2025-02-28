@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreenWidget extends StatefulWidget {
   final List<Color> bgColor;
@@ -92,7 +91,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                     alignment: Alignment.center,
                     child: Text(
                       'Get Started',
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold

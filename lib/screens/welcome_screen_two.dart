@@ -15,7 +15,6 @@ class _WelcomeScreenTwoState extends State<WelcomeScreenTwo> {
       body: WelcomeScreenWidget(
         bgColor: [
           Color(0xffC558F2),
-          // Color(0xffD372E6),
           Color(0xffE18CD9)
         ], 
         buttonGradientColor: [

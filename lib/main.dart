@@ -11,8 +11,8 @@ class FitnessMobileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fitness Mobile App',
       debugShowCheckedModeBanner: false,
+      title: 'Fitness Mobile App',
       home: OnboardingOne(),
     );
   }

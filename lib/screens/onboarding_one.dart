@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/register_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingOne extends StatefulWidget {
@@ -91,7 +92,14 @@ class _OnboardingOneState extends State<OnboardingOne> {
             child: Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => RegisterPage(),
+                    ),
+                  );
+                },
                 child: Container(
                   width: 60,
                   height: 60,

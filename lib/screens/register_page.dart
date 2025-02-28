@@ -12,26 +12,23 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final myItems = [
     RegisterPageWidget(
-      imagePath: 'assets/images/improve_shape.png', 
-      heading: 'Improve Shape', 
-      content: 'I have a low amount of body fat'
-                '\nand need / want to build more'
-                '\nmuscle'
-    ),
+        imagePath: 'assets/images/improve_shape.png',
+        heading: 'Improve Shape',
+        content: 'I have a low amount of body fat'
+            '\nand need / want to build more'
+            '\nmuscle'),
     RegisterPageWidget(
-      imagePath: 'assets/images/lean_tone.png', 
-      heading: 'Lean & Tone', 
-      content: "I'm \"skinny fat\", look thin but have"
-                '\nno shape. I want to add learn'
-                '\nmuscle in the right way'
-    ),
+        imagePath: 'assets/images/lean_tone.png',
+        heading: 'Lean & Tone',
+        content: "I'm \"skinny fat\", look thin but have"
+            '\nno shape. I want to add learn'
+            '\nmuscle in the right way'),
     RegisterPageWidget(
-      imagePath: 'assets/images/lose_fat.png', 
-      heading: 'Lose a Fat', 
-      content: 'I have over 20 lbs to lose, I want to'
-                '\ndrop all this fat and gain muscle'
-                '\nmass'
-    ),
+        imagePath: 'assets/images/lose_fat.png',
+        heading: 'Lose a Fat',
+        content: 'I have over 20 lbs to lose, I want to'
+            '\ndrop all this fat and gain muscle'
+            '\nmass'),
   ];
 
   int currentIndex = 0;
@@ -74,8 +71,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 CarouselSlider(
                   options: CarouselOptions(
                     enlargeFactor: 0.3,
-                   enlargeCenterPage: true,
-                   viewportFraction: 0.7, 
+                    enlargeCenterPage: true,
+                    viewportFraction: 0.7,
                     autoPlay: false,
                     height: screenHeight * 0.6,
                     // autoPlayCurve: Curves.fastOutSlowIn,
@@ -94,40 +91,38 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           Spacer(),
           SizedBox(
-              height: screenHeight * 0.1,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 16.0),
-                child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    width: 300,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [
-                              Color(0xff805EF4),
-                              Color(0xff946AF3),
-                              Color(0xffA676F1),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight),
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
+            height: screenHeight * 0.1,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 16.0),
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  width: 300,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                        Color(0xff805EF4),
+                        Color(0xff946AF3),
+                        Color(0xffA676F1),
+                      ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                      borderRadius: BorderRadius.circular(50)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Confirm',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
                 ),
-              ),)
+              ),
+            ),
+          )
         ],
       )),
     );

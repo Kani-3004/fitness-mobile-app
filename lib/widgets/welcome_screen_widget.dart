@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/onboarding_one.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreenWidget extends StatefulWidget {
@@ -73,7 +74,12 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
             child: InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (BuildContext context) => OnboardingOne())
+                );
+              },
               child: Container(
                 width: 300,
                 height: 50,

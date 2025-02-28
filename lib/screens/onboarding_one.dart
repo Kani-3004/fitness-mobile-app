@@ -10,6 +10,8 @@ class OnboardingOne extends StatefulWidget {
 class _OnboardingOneState extends State<OnboardingOne> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -19,7 +21,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
               opacity: 1,
               child: ClipPath(
                 child: Container(
-                  height: 300,
+                  height: screenHeight * 0.4, // 40% of screen height
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [

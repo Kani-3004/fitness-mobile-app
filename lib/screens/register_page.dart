@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_mobile_app/widgets/register_page_widget.dart';
@@ -107,6 +108,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: screenHeight * 0.072,
                 child: InkWell(
                   onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => LoginPage()));
                     // Action on confirm tap
                   },
                   child: Container(

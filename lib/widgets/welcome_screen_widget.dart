@@ -24,20 +24,20 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: widget.bgColor,
-          begin: Alignment.centerRight,
-          end: Alignment.centerLeft
-        )
-      ),
+          gradient: LinearGradient(
+              colors: widget.bgColor,
+              begin: Alignment.centerRight,
+              end: Alignment.centerLeft)),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Spacer(),
-          Column(mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               RichText(
                 text: TextSpan(
@@ -70,15 +70,15 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                     ),
             ],
           ),
-         Spacer(),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
             child: InkWell(
-              onTap: (){
+              onTap: () {
                 Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (BuildContext context) => OnboardingOne())
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => OnboardingOne()));
               },
               child: Container(
                 width: 350,

@@ -5,17 +5,15 @@ void main() {
   runApp(const FitnessMobileApp());
 }
 
-class FitnessMobileApp extends StatefulWidget {
+class FitnessMobileApp extends StatelessWidget {
   const FitnessMobileApp({super.key});
 
   @override
-  State<FitnessMobileApp> createState() => _FitnessMobileAppState();
-}
-
-class _FitnessMobileAppState extends State<FitnessMobileApp> {
-  @override
   Widget build(BuildContext context) {
-    
-    return const OnboardingOne();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Fitness Mobile App',
+      home: OnboardingOne(),
+    );
   }
 }

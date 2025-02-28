@@ -1,4 +1,6 @@
 import 'package:fitness_mobile_app/screens/register_page.dart';
+import 'package:fitness_mobile_app/screens/onboarding_one.dart';
+import 'package:fitness_mobile_app/screens/welcome_screen_two.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,12 +14,12 @@ class FitnessMobileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fitness Mobile App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme()
       ),
-      home: RegisterPage(),
+      title: 'Fitness Mobile App',
+      home: WelcomeScreenTwo(),
     );
   }
 }

@@ -72,6 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   options: CarouselOptions(
                     enlargeFactor: 0.3,
                     enlargeCenterPage: true,
+                    
                     viewportFraction: 0.7,
                     autoPlay: false,
                     height: screenHeight * 0.6,
@@ -92,31 +93,28 @@ class _RegisterPageState extends State<RegisterPage> {
           Spacer(),
           SizedBox(
             height: screenHeight * 0.1,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: InkWell(
-                onTap: () {},
-                child: Container(
-                  width: 300,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        Color(0xff805EF4),
-                        Color(0xff946AF3),
-                        Color(0xffA676F1),
-                      ], begin: Alignment.topLeft, end: Alignment.bottomRight),
-                      borderRadius: BorderRadius.circular(50)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Confirm',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                      ),
+            child: InkWell(
+              onTap: () {},
+              child: Container(
+                width: 300,
+                height: 50,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                      Color(0xff805EF4),
+                      Color(0xff946AF3),
+                      Color(0xffA676F1),
+                    ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                    borderRadius: BorderRadius.circular(50)),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Confirm',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

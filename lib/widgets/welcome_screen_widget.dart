@@ -44,7 +44,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                   text: 'DIDPOOL',
                   style: TextStyle(
                     color: widget.richTextColor,
-                    fontSize: 36,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 children: [
@@ -52,7 +52,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                     text: 'Fit',
                     style: TextStyle(
                       color: Color(0xff1D1617),
-                      fontSize: 36,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold
                     )
                   )
@@ -64,7 +64,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
           'Everybody Can Train',
           style: TextStyle(
             color: widget.textColor,
-            fontSize: 18,
+            fontSize: 20,
             decoration: TextDecoration.none
           ),
                     ),
@@ -81,15 +81,15 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                 );
               },
               child: Container(
-                width: 300,
-                height: 50,
+                width: 350,
+                height: 70,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: widget.buttonGradientColor,
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight
                   ),
-                  borderRadius: BorderRadius.circular(30)
+                  borderRadius: BorderRadius.circular(40)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -99,7 +99,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                       'Get Started',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                       ),
                     ),

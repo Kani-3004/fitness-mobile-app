@@ -17,7 +17,8 @@ class _OnboardingOneState extends State<OnboardingOne> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Stack(
             children: [
@@ -60,12 +61,18 @@ class _OnboardingOneState extends State<OnboardingOne> {
           Spacer(flex: 1),
 
           // Text
-          Text(
-            'Track Your Goal',
-            style: TextStyle(
-              fontSize: 26,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                'Track Your Goal',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
             ),
           ),
 
@@ -75,7 +82,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Don't worry if you have trouble determining your goals. We can help you determine your goals and track them.",
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.start,
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.black,

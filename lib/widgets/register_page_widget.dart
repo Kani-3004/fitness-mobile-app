@@ -25,7 +25,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
               colors: [Color(0xffC558F2), Color(0xffE18CD9)],
               begin: Alignment.centerRight,
               end: Alignment.centerLeft),
-          borderRadius: BorderRadius.circular(10)),
+          borderRadius: BorderRadius.circular(30)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -42,7 +42,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 110.0),
                   child: Divider(
                     color: Colors.white,
                     thickness: 1.5,

@@ -22,8 +22,8 @@ class _WelcomeScreenTwoState extends State<WelcomeScreenTwo> {
           Color(0xff946AF3),
           Color(0xffA676F1),
         ], 
-        richTextColor: Color(0xff805EF4), 
-        textColor: Color(0xffCAC9D3)
+        richTextColor: Colors.white, 
+        textColor: Colors.white
       ),
     );
   }

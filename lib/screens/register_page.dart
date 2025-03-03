@@ -44,12 +44,14 @@ class _RegisterPageState extends State<RegisterPage> {
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                height: screenHeight * 0.17,
+                // height: screenHeight * 0.17,
                 // Heading Text
                 child: Center(
                   child: Column(
@@ -74,7 +76,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              // SizedBox(height: screenHeight * 0.05),
+              Spacer(),
 
               /// Carousel
               CarouselSlider(

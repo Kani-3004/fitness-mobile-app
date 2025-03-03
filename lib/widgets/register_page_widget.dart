@@ -18,8 +18,9 @@ class RegisterPageWidget extends StatefulWidget {
 class _RegisterPageWidgetState extends State<RegisterPageWidget> {
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
-      // height: widgetHeight,
       decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [Color(0xffC558F2), Color(0xffE18CD9)],
@@ -29,11 +30,12 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(widget.imagePath),
+          SizedBox(height: screenHeight * 0.3, child: Image.asset(widget.imagePath)),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                SizedBox(height: 40,),
                 Text(
                   widget.heading,
                   style: TextStyle(

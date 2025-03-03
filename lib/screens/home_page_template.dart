@@ -37,7 +37,7 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          elevation: 0, // Removes shadow for a cleaner look
+          elevation: 0,
           title: Padding(
             padding: const EdgeInsets.only(left: 8.0, top: 8.0),
             child: Column(
@@ -65,7 +65,7 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
               padding: const EdgeInsets.only(right: 8.0, top: 8.0),
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) => NotificationPage(),
                     ),

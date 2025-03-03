@@ -113,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: screenWidth * 0.8,
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) => LoginPage()));

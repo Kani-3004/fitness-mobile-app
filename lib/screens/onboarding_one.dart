@@ -100,7 +100,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
               alignment: Alignment.bottomRight,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (BuildContext context) => RegisterPage(),

@@ -1,5 +1,6 @@
 import 'package:fitness_mobile_app/screens/activity_tracker_page.dart';
 import 'package:fitness_mobile_app/screens/home_page.dart';
+import 'package:fitness_mobile_app/screens/notification_page.dart';
 import 'package:fitness_mobile_app/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,16 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8.0, top: 8.0),
-              child: Icon(Icons.notifications_none_outlined),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => NotificationPage(),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.notifications_none),
+              ),
             )
           ],
         ),

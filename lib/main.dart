@@ -16,7 +16,7 @@ class FitnessMobileApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
       title: 'Fitness Mobile App',
-      home: WelcomeScreenTwo(),
+      home: HomePageTemplate(),
     );
   }
 }

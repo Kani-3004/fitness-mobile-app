@@ -39,9 +39,45 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
         //The Column that contains everything
         body: Column(
           children: [
-            // The body mass index card
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 18.0),
+              child: Container(
+                color: Colors.deepPurple,
+                height: MediaQuery.of(context).size.height * 0.35,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    // The body mass index card
+                    Expanded(
+                      flex: 1,
+                      child: Card(
+                        
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 125),
+                          child: Text("BMI Card"),
+                        ),
+                        color: Colors.green,
+                      ),
+                    ),
 
-            // Today Target Card
+                    // Today Target Card
+                    Flexible(
+                      flex: 1,
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20.0, horizontal: 90),
+                          child: Text("Today Target Card"),
+                        ),
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
 
             // Activity Status Topic
 

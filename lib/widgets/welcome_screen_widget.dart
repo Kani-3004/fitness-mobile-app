@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/onboarding_one.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreenWidget extends StatefulWidget {
@@ -23,27 +24,27 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: widget.bgColor,
-          begin: Alignment.centerRight,
-          end: Alignment.centerLeft
-        )
-      ),
+          gradient: LinearGradient(
+              colors: widget.bgColor,
+              begin: Alignment.centerRight,
+              end: Alignment.centerLeft)),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Spacer(),
-          Column(mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               RichText(
                 text: TextSpan(
                   text: 'DIDPOOL',
                   style: TextStyle(
                     color: widget.richTextColor,
-                    fontSize: 36,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 children: [
@@ -51,7 +52,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                     text: 'Fit',
                     style: TextStyle(
                       color: Color(0xff1D1617),
-                      fontSize: 36,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold
                     )
                   )
@@ -63,27 +64,32 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
           'Everybody Can Train',
           style: TextStyle(
             color: widget.textColor,
-            fontSize: 18,
+            fontSize: 20,
             decoration: TextDecoration.none
           ),
                     ),
             ],
           ),
-         Spacer(),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
             child: InkWell(
-              onTap: (){},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => OnboardingOne()));
+              },
               child: Container(
-                width: 300,
-                height: 50,
+                width: 350,
+                height: 70,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: widget.buttonGradientColor,
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight
                   ),
-                  borderRadius: BorderRadius.circular(30)
+                  borderRadius: BorderRadius.circular(40)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -93,7 +99,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                       'Get Started',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                       ),
                     ),

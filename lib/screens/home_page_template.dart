@@ -1,3 +1,6 @@
+import 'package:fitness_mobile_app/screens/activity_tracker_page.dart';
+import 'package:fitness_mobile_app/screens/home_page.dart';
+import 'package:fitness_mobile_app/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTemplate extends StatefulWidget {
@@ -8,6 +11,24 @@ class HomePageTemplate extends StatefulWidget {
 }
 
 class _HomePageTemplateState extends State<HomePageTemplate> {
+  int selectedIndex = 0;
+
+  final List<Widget> pages = [
+    const HomePage(),
+    const ActivityTrackerPage(),
+    const Center(child: Text("Search Placeholder")),
+    const Center(child: Text("Camera Placeholder")),
+    const ProfilePage(),
+  ];
+
+  void _onItemTapped(int index) {
+    if (index != 2 && index != 3) {
+      setState(() {
+        selectedIndex = index;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -15,75 +36,66 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Welcome back",
-                style: TextStyle(
-                  color: Colors.grey[300],
-                  fontSize: 18,
+          elevation: 0, // Removes shadow for a cleaner look
+          title: Padding(
+            padding: const EdgeInsets.only(left: 8.0, top: 8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Welcome back",
+                  style: TextStyle(
+                    color:
+                        Colors.grey[600], // Darker grey for better visibility
+                    fontSize: 18,
+                  ),
                 ),
-              ),
-              Text(
-                "Masi Ramezanzade",
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
+                const Text(
+                  "Masi Ramezanzade",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-          actions: [Icon(Icons.notifications_none_outlined)],
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0, top: 8.0),
+              child: Icon(Icons.notifications_none_outlined),
+            )
+          ],
         ),
 
-        //The Column that contains everything
-        body: Column(
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 18.0),
-              child: Container(
-                color: Colors.deepPurple,
-                height: MediaQuery.of(context).size.height * 0.35,
-                width: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    // The body mass index card
-                    Expanded(
-                      flex: 1,
-                      child: Card(
-                        
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 125),
-                          child: Text("BMI Card"),
-                        ),
-                        color: Colors.green,
-                      ),
-                    ),
+        // Dynamic Body Content
+        body: pages[selectedIndex],
 
-                    // Today Target Card
-                    Flexible(
-                      flex: 1,
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 20.0, horizontal: 90),
-                          child: Text("Today Target Card"),
-                        ),
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ],
+        // Bottom Navigation Bar
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
+          elevation: 0,
+          showUnselectedLabels: false,
+          showSelectedLabels: false,
+          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.black,
+          currentIndex: selectedIndex,
+          onTap: _onItemTapped,
+          items: [
+            BottomNavigationBarItem(
+                icon: Image.asset("assets/images/home.png"), label: ""),
+            BottomNavigationBarItem(
+                icon: Image.asset("assets/images/activity.png"), label: ""),
+            BottomNavigationBarItem(
+                icon: Image.asset(
+                  "assets/images/search.png",
+                  color: Colors.grey,
                 ),
-              ),
-            )
-
-            // Activity Status Topic
-
-            // Heart Rate card
-
-            //Water intake card and sleep card
+                label: ""),
+            BottomNavigationBarItem(
+                icon: Image.asset("assets/images/camera.png"), label: ""),
+            BottomNavigationBarItem(
+                icon: Image.asset("assets/images/profile.png"), label: ""),
           ],
         ),
       ),

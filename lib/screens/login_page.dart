@@ -1,4 +1,4 @@
-import 'package:fitness_mobile_app/screens/home_page.dart';
+import 'package:fitness_mobile_app/screens/home_page_template.dart';
 import 'package:fitness_mobile_app/widgets/login_email_field.dart';
 import 'package:fitness_mobile_app/widgets/login_password_field.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +15,19 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  // To get the credential fields automatically filled
+  @override
+  void initState() {
+    super.initState();
+    _emailController.text = "pragadeeswaran@boodskap.io";
+    _passwordController.text = "welcome123";
+  }
+
   void login() {
     if (_loginKey.currentState!.validate()) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => HomePageTemplate()),
       );
     }
   }

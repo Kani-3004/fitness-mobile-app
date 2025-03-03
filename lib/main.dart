@@ -1,4 +1,3 @@
-import 'package:fitness_mobile_app/screens/login_page.dart';
 import 'package:fitness_mobile_app/screens/welcome_screen_two.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

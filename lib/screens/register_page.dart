@@ -40,6 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
@@ -48,7 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             children: [
               SizedBox(
-                height: screenHeight * 0.2,
+                height: screenHeight * 0.17,
                 // Heading Text
                 child: Center(
                   child: Column(
@@ -95,7 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   return AnimatedOpacity(
                     duration: Duration(milliseconds: 300),
-                    opacity: isCenter ? 1.0 : 0.2,
+                    opacity: isCenter ? 1.0 : 0.3,
                     child: entry.value,
                   );
                 }).toList(),
@@ -105,7 +106,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
               // Confirm button
               SizedBox(
-                height: screenHeight * 0.072,
+                height: screenHeight * 0.08,
+                width: screenWidth * 0.8,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -115,8 +117,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     // Action on confirm tap
                   },
                   child: Container(
-                    width: 350,
-                    height: 25,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [

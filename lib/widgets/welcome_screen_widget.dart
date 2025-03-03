@@ -41,33 +41,31 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
             children: [
               RichText(
                 text: TextSpan(
-                  text: 'DIDPOOL',
-                  style: TextStyle(
-                    color: widget.richTextColor,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                children: [
-                  TextSpan(
-                    text: 'Fit',
+                    text: 'DIDPOOL',
                     style: TextStyle(
-                      color: Color(0xff1D1617),
+                      color: widget.richTextColor,
                       fontSize: 40,
-                      fontWeight: FontWeight.bold
-                    )
-                  )
-                ]
-                ),
-              ),
-              SizedBox(height: 10,),
-               Text(
-          'Everybody Can Train',
-          style: TextStyle(
-            color: widget.textColor,
-            fontSize: 20,
-            decoration: TextDecoration.none
-          ),
+                      fontWeight: FontWeight.bold,
                     ),
+                    children: [
+                      TextSpan(
+                          text: 'Fit',
+                          style: TextStyle(
+                              color: Color(0xff1D1617),
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Everybody Can Train',
+                style: TextStyle(
+                    color: widget.textColor,
+                    fontSize: 20,
+                    decoration: TextDecoration.none),
+              ),
             ],
           ),
           Spacer(),
@@ -75,7 +73,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
             padding: const EdgeInsets.only(bottom: 16.0),
             child: InkWell(
               onTap: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (BuildContext context) => OnboardingOne()));
@@ -84,13 +82,11 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                 width: 350,
                 height: 70,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: widget.buttonGradientColor,
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight
-                  ),
-                  borderRadius: BorderRadius.circular(40)
-                ),
+                    gradient: LinearGradient(
+                        colors: widget.buttonGradientColor,
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight),
+                    borderRadius: BorderRadius.circular(40)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Align(
@@ -98,10 +94,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                     child: Text(
                       'Get Started',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                      ),
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

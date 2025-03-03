@@ -27,7 +27,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   color: Color(0xffF7F8F8)),
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) => HomePageTemplate(),
                     ),

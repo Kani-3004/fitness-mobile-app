@@ -1,5 +1,8 @@
 import 'package:fitness_mobile_app/widgets/bmi_card_homepage.dart';
+import 'package:fitness_mobile_app/widgets/heartrate_card_homepage.dart';
+import 'package:fitness_mobile_app/widgets/sleep_card_homepage.dart';
 import 'package:fitness_mobile_app/widgets/today_target_homepage.dart';
+import 'package:fitness_mobile_app/widgets/water_intake_homepage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                       flex: 2,
                       child: BmiCardHomepage(),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 25),
 
                     //second half that has today target
                     Flexible(
@@ -47,7 +50,6 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //Activity Status Text
-            SizedBox(height: 20),
 
             Row(
               children: [
@@ -70,74 +72,10 @@ class _HomePageState extends State<HomePage> {
                   //Column that hs the three remaining cards
                   // in the second half of the page
                   children: [
+                    //Heart Rate card
                     Flexible(
                       flex: 1,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          gradient: LinearGradient(
-                            colors: [
-                              Color(0xFFFAE8F7),
-                              Color(0xFFF2DCFC),
-                            ],
-                          ),
-                        ),
-                        child: Column(
-                          children: [
-                            //column for the two heart rate texts
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 15,
-                                right: 15,
-                                left: 15,
-                              ),
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Heart Rate",
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        SizedBox(height: 5),
-                                        ShaderMask(
-                                          shaderCallback: (Rect bounds) {
-                                            return LinearGradient(
-                                              colors: [
-                                                Color(0xFFE391D5),
-                                                Color(0xFFC355F2),
-                                              ], // Gradient colors
-                                              begin: Alignment.topLeft,
-                                              end: Alignment.bottomRight,
-                                            ).createShader(bounds);
-                                          },
-                                          child: Text(
-                                            "78 BPM",
-                                            style: TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors
-                                                  .white, // Keep white for visibility
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-
-                            //space for spline chart
-                          ],
-                        ),
-                      ),
+                      child: HeartrateCardHomepage(),
                     ),
                     SizedBox(height: 15),
 
@@ -147,27 +85,17 @@ class _HomePageState extends State<HomePage> {
                       flex: 1,
                       child: Row(
                         children: [
-                          // heart rate card
-                          Flexible(
+                          //Water Intake
+                          Expanded(
                             flex: 1,
-                            child: Card(
-                              color: Color(0xFFF7E3FA),
-                              child: Center(
-                                child: Text("Heart Rate"),
-                              ),
-                            ),
+                            child: WaterIntakeHomepage(),
                           ),
                           SizedBox(width: 15),
 
-                          // water intake card
-                          Flexible(
+                          // Sleep card
+                          Expanded(
                             flex: 1,
-                            child: Card(
-                              color: Color(0xFFF7E3FA),
-                              child: Center(
-                                child: Text("Sleep"),
-                              ),
-                            ),
+                            child: SleepCardHomepage(),
                           )
                         ],
                       ),

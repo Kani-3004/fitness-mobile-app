@@ -13,7 +13,7 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(
           colors: [
             Color(0xFFE391D5),

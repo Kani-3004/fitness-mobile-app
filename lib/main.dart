@@ -1,4 +1,4 @@
-import 'package:fitness_mobile_app/screens/welcome_screen_two.dart';
+import 'package:fitness_mobile_app/screens/home_page_template.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,7 +15,7 @@ class FitnessMobileApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
       title: 'Fitness Mobile App',
-      home: WelcomeScreenTwo(),
+      home: HomePageTemplate(),
     );
   }
 }

@@ -36,6 +36,7 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          toolbarHeight: MediaQuery.of(context).size.height * 0.07,
           backgroundColor: Colors.white,
           elevation: 0,
           title: Padding(
@@ -46,8 +47,7 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
                 Text(
                   "Welcome back",
                   style: TextStyle(
-                    color:
-                        Colors.grey[600], // Darker grey for better visibility
+                    color: Colors.grey[600],
                     fontSize: 18,
                   ),
                 ),
@@ -71,43 +71,87 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
                     ),
                   );
                 },
-                icon: Icon(Icons.notifications_none),
-              ),
-            )
-          ],
-        ),
-
-        // Dynamic Body Content
-        body: pages[selectedIndex],
-
-        // Bottom Navigation Bar
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          elevation: 0,
-          showUnselectedLabels: false,
-          showSelectedLabels: false,
-          unselectedItemColor: Colors.grey,
-          selectedItemColor: Colors.black,
-          currentIndex: selectedIndex,
-          onTap: _onItemTapped,
-          items: [
-            BottomNavigationBarItem(
-                icon: Image.asset("assets/images/home.png"), label: ""),
-            BottomNavigationBarItem(
-                icon: Image.asset("assets/images/activity.png"), label: ""),
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  "assets/images/search.png",
-                  color: Colors.grey,
+                icon: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xffF7F8F8)),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => NotificationPage(),
+                        ),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.notifications_none,
+                      size: 18,
+                    ),
+                  ),
                 ),
-                label: ""),
-            BottomNavigationBarItem(
-                icon: Image.asset("assets/images/camera.png"), label: ""),
-            BottomNavigationBarItem(
-                icon: Image.asset("assets/images/profile.png"), label: ""),
+              ),
+            ),
           ],
         ),
+        body: pages[selectedIndex],
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          shape: CircularNotchedRectangle(),
+          notchMargin: 5,
+          clipBehavior: Clip.none,
+          child: Container(
+            height: 60,
+            decoration: BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: Image.asset("assets/images/home.png"),
+                  onPressed: () => _onItemTapped(0),
+                ),
+                IconButton(
+                  icon: Image.asset("assets/images/activity.png"),
+                  onPressed: () => _onItemTapped(1),
+                ),
+                SizedBox(width: 48),
+                IconButton(
+                  icon: Image.asset("assets/images/camera.png"),
+                  onPressed: () => _onItemTapped(3),
+                ),
+                IconButton(
+                  icon: Image.asset("assets/images/profile.png"),
+                  onPressed: () => _onItemTapped(4),
+                ),
+              ],
+            ),
+          ),
+        ),
+        floatingActionButton: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFF825FF5),
+                Color(0xFFA677F2),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: FloatingActionButton(
+            backgroundColor: Colors.transparent,
+            shape: CircleBorder(),
+            onPressed: () => setState(() => selectedIndex = 2),
+            elevation: 0,
+            child: Image.asset("assets/images/search.png"),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

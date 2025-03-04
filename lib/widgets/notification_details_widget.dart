@@ -24,7 +24,7 @@ class _NotificationDetailsWidgetState extends State<NotificationDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,7 +45,7 @@ class _NotificationDetailsWidgetState extends State<NotificationDetailsWidget> {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500
                   ),
                 ),
@@ -54,7 +54,7 @@ class _NotificationDetailsWidgetState extends State<NotificationDetailsWidget> {
                   widget.timeInfo,
                   style: TextStyle(
                     color: Color(0xffb6b4c2),
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400
                   ),
                 ),

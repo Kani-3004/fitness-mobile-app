@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:fitness_mobile_app/screens/onboarding_one.dart';
 import 'package:fitness_mobile_app/widgets/welcome_screen_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +12,17 @@ class WelcomeScreenTwo extends StatefulWidget {
 }
 
 class _WelcomeScreenTwoState extends State<WelcomeScreenTwo> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => OnboardingOne()),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -13,7 +13,12 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xFFF7E3FA),
+        gradient: LinearGradient(
+          colors: [
+            Color(0xFFFAE8F7),
+            Color(0xFFF2DCFC),
+          ],
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),

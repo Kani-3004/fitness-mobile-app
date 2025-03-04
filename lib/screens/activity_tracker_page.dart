@@ -1,3 +1,6 @@
+import 'package:fitness_mobile_app/screens/today_target_tracker_page.dart';
+import 'package:fitness_mobile_app/widgets/activity_progress_targetpage.dart';
+import 'package:fitness_mobile_app/widgets/latest_activity_targetpage.dart';
 import 'package:flutter/material.dart';
 
 class ActivityTrackerPage extends StatefulWidget {
@@ -80,7 +83,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: TodaytargriPage()
+                    child: TodayTargetTrackerPage()
                   ),
                 ),
               ),
@@ -151,7 +154,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Activityprogress(),
+                  child: ActivityProgressTargetpage(),
                 ),
               ),
               Padding(
@@ -179,12 +182,12 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
               ),
               Column(
                 children: [
-                  Demowidget(
+                  LatestActivityTargetpage(
                     imagePath: 'assets/images/drinking_girl.png', 
                     message: 'Drinking 300ml Water', 
                     timeInfo: 'About 3 minutes ago', 
                     imageBgColor: Color(0xffB3FCEC)),
-                  Demowidget(
+                  LatestActivityTargetpage(
                     imagePath: 'assets/images/eating_girl.png', 
                     message: 'Eat Snack (Fitbar)', 
                     timeInfo: 'About 10 minutes ago', 

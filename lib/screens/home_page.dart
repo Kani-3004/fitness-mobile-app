@@ -72,10 +72,70 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Flexible(
                       flex: 1,
-                      child: Card(
-                        color: Color(0xFFF7E3FA),
-                        child: Center(
-                          child: Text("Heart Rate"),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(
+                            colors: [
+                              Color(0xFFFAE8F7),
+                              Color(0xFFF2DCFC),
+                            ],
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            //column for the two heart rate texts
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 15,
+                                right: 15,
+                                left: 15,
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Heart Rate",
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        ShaderMask(
+                                          shaderCallback: (Rect bounds) {
+                                            return LinearGradient(
+                                              colors: [
+                                                Color(0xFFE391D5),
+                                                Color(0xFFC355F2),
+                                              ], // Gradient colors
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                            ).createShader(bounds);
+                                          },
+                                          child: Text(
+                                            "78 BPM",
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors
+                                                  .white, // Keep white for visibility
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+
+                            //space for spline chart
+                          ],
                         ),
                       ),
                     ),

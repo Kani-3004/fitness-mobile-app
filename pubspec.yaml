@@ -34,7 +34,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter_launcher_icons:
-  android: "true"
+  android: true
   ios: true
   image_path: "assets/images/barbell.png"
 

@@ -26,21 +26,32 @@ class _PieChartHomepageState extends State<PieChartHomepage> {
                   explode: true,
                   explodeIndex: 5,
                   explodeOffset: "10%",
+                  startAngle: 0,
+                  endAngle: 350,
+                  dataLabelSettings: DataLabelSettings(
+                    isVisible: true,
+                    labelPosition: ChartDataLabelPosition.inside,
+                    textStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),
-            Positioned(
-              top: 27,
-              right: 28,
-              child: Text(
-                '20,1',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+            // Positioned(
+            //   top: 27,
+            //   right: 28,
+            //   child: Text(
+            //     '20,1',
+            //     style: TextStyle(
+            //       color: Colors.white,
+            //       fontSize: 16,
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -49,7 +60,7 @@ class _PieChartHomepageState extends State<PieChartHomepage> {
 
   List<ChartData> _getChartData() {
     return [
-      ChartData('Highlighted', 20, Colors.transparent),
+      ChartData('Highlighted', 20.1, Colors.transparent),
       ChartData('Base', 58, Colors.white),
     ];
   }

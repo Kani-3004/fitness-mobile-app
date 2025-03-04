@@ -111,20 +111,44 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: Image.asset("assets/images/home.png"),
+                  icon: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      selectedIndex == 0 ? Colors.purple : Colors.grey,
+                      BlendMode.srcIn,
+                    ),
+                    child: Image.asset("assets/images/home.png"),
+                  ),
                   onPressed: () => _onItemTapped(0),
                 ),
                 IconButton(
-                  icon: Image.asset("assets/images/activity.png"),
+                  icon: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      selectedIndex == 1 ? Colors.purple : Colors.grey,
+                      BlendMode.srcIn,
+                    ),
+                    child: Image.asset("assets/images/activity.png"),
+                  ),
                   onPressed: () => _onItemTapped(1),
                 ),
                 SizedBox(width: 48),
                 IconButton(
-                  icon: Image.asset("assets/images/camera.png"),
+                  icon: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      selectedIndex == 3 ? Colors.purple : Colors.grey,
+                      BlendMode.srcIn,
+                    ),
+                    child: Image.asset("assets/images/camera.png"),
+                  ),
                   onPressed: () => _onItemTapped(3),
                 ),
                 IconButton(
-                  icon: Image.asset("assets/images/profile.png"),
+                  icon: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      selectedIndex == 4 ? Colors.purple : Colors.grey,
+                      BlendMode.srcIn,
+                    ),
+                    child: Image.asset("assets/images/profile.png"),
+                  ),
                   onPressed: () => _onItemTapped(4),
                 ),
               ],

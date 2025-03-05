@@ -22,7 +22,7 @@ class _TodayTargetTrackerpageState extends State<TodayTargetTrackerpage> {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: screenHeight * 0.082,
+      height: screenHeight * 0.085,
       width: screenWidth * 0.4,
       child: Card(
         color: Colors.white,

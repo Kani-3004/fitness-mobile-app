@@ -1,7 +1,7 @@
 import 'package:fitness_mobile_app/screens/activity_tracker_page.dart';
 import 'package:fitness_mobile_app/screens/home_page.dart';
-import 'package:fitness_mobile_app/screens/notification_page.dart';
 import 'package:fitness_mobile_app/screens/profile_page.dart';
+import 'package:fitness_mobile_app/screens/progress_photo_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTemplate extends StatefulWidget {
@@ -18,12 +18,12 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
     const HomePage(),
     const ActivityTrackerPage(),
     const Center(child: Text("Search Placeholder")),
-    const Center(child: Text("Camera Placeholder")),
+    const ProgressPhotoPage(),
     const ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
-    if (index != 2 && index != 3) {
+    if (index != 2) {
       setState(() {
         selectedIndex = index;
       });
@@ -35,67 +35,6 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        // appBar: AppBar(
-        //   toolbarHeight: MediaQuery.of(context).size.height * 0.07,
-        //   backgroundColor: Colors.white,
-        //   elevation: 0,
-        //   title: Padding(
-        //     padding: const EdgeInsets.only(left: 8.0, top: 8.0),
-        //     child: Column(
-        //       crossAxisAlignment: CrossAxisAlignment.start,
-        //       children: [
-        //         Text(
-        //           "Welcome back",
-        //           style: TextStyle(
-        //             color: Colors.grey[600],
-        //             fontSize: 18,
-        //           ),
-        //         ),
-        //         const Text(
-        //           "Masi Ramezanzade",
-        //           style: TextStyle(
-        //             fontWeight: FontWeight.w900,
-        //           ),
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        //   actions: [
-        //     Padding(
-        //       padding: const EdgeInsets.only(right: 8.0, top: 8.0),
-        //       child: IconButton(
-        //         onPressed: () {
-        //           Navigator.of(context).pushReplacement(
-        //             MaterialPageRoute(
-        //               builder: (context) => NotificationPage(),
-        //             ),
-        //           );
-        //         },
-        //         icon: Container(
-        //           height: 40,
-        //           width: 40,
-        //           decoration: BoxDecoration(
-        //               shape: BoxShape.rectangle,
-        //               borderRadius: BorderRadius.circular(10),
-        //               color: Color(0xffF7F8F8)),
-        //           child: IconButton(
-        //             onPressed: () {
-        //               Navigator.of(context).pushReplacement(
-        //                 MaterialPageRoute(
-        //                   builder: (context) => NotificationPage(),
-        //                 ),
-        //               );
-        //             },
-        //             icon: Icon(
-        //               Icons.notifications_none,
-        //               size: 18,
-        //             ),
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
         body: pages[selectedIndex],
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,
@@ -170,7 +109,7 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
           child: FloatingActionButton(
             backgroundColor: Colors.transparent,
             shape: CircleBorder(),
-            onPressed: () => setState(() => selectedIndex = 2),
+            onPressed: () {},
             elevation: 0,
             child: Image.asset("assets/images/search.png"),
           ),

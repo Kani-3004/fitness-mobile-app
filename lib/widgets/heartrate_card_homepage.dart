@@ -11,9 +11,12 @@ class HeartrateCardHomepage extends StatefulWidget {
 class _HeartrateCardHomepageState extends State<HeartrateCardHomepage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(screenWidth * 0.05),
         gradient: LinearGradient(
           colors: [
             Color(0xFFFAE8F7),
@@ -24,13 +27,12 @@ class _HeartrateCardHomepageState extends State<HeartrateCardHomepage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //column for the two heart rate texts
           SizedBox(
             child: Padding(
-              padding: const EdgeInsets.only(
-                top: 15,
-                right: 15,
-                left: 15,
+              padding: EdgeInsets.only(
+                top: screenHeight * 0.02,
+                right: screenWidth * 0.04,
+                left: screenWidth * 0.04,
               ),
               child: Row(
                 children: [
@@ -40,18 +42,18 @@ class _HeartrateCardHomepageState extends State<HeartrateCardHomepage> {
                       Text(
                         "Heart Rate",
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: screenWidth * 0.035,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: screenHeight * 0.005),
                       ShaderMask(
                         shaderCallback: (Rect bounds) {
                           return LinearGradient(
                             colors: [
                               Color(0xFFE391D5),
                               Color(0xFFC355F2),
-                            ], // Gradient colors
+                            ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ).createShader(bounds);
@@ -59,9 +61,9 @@ class _HeartrateCardHomepageState extends State<HeartrateCardHomepage> {
                         child: Text(
                           "78 BPM",
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: screenWidth * 0.040,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white, // Keep white for visibility
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -71,17 +73,11 @@ class _HeartrateCardHomepageState extends State<HeartrateCardHomepage> {
               ),
             ),
           ),
-
-          //space for spline chart
-
           Flexible(
             flex: 3,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 0),
-              child: SizedBox(
-                height: 150, // Adjust height as needed
-                child: HeartrateChartHomepage(),
-              ),
+            child: SizedBox(
+              height: screenHeight * 0.2,
+              child: HeartrateChartHomepage(),
             ),
           ),
         ],

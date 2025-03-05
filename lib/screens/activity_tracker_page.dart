@@ -78,7 +78,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                height: screenHeight * 0.2,
+                height: screenHeight * 0.18,
                 width: screenWidth,
                 child: Card(
                   color: Color(0xffF6E2FA),
@@ -86,7 +86,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
                     child: TodayTargetTrackerPage()
                   ),
                 ),
@@ -128,7 +128,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                             Text(
                               selectedValue,
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 12),
+                                  color: Colors.white, fontSize: 14),
                             ),
                             Icon(Icons.keyboard_arrow_down,
                                 color: Colors.white),

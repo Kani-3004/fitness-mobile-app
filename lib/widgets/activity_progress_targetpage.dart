@@ -30,9 +30,10 @@ class _ActivityProgressTargetpageState extends State<ActivityProgressTargetpage>
           isTrackVisible: true,
           trackColor: Color(0xfff7f8f8),
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          pointColorMapper: (PatientData data, int index) {
-            return index.isEven ? Color(0xff00ff66) : Color(0xffc150f6);
-          },
+          gradient: LinearGradient(colors: [
+            Color(0xff00f0ff),
+            Color(0xff00ff66),
+          ]),
         ),
       ],
       primaryXAxis: CategoryAxis(

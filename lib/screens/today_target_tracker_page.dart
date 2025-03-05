@@ -24,13 +24,13 @@ class _TodayTargetTrackerPageState extends State<TodayTargetTrackerPage> {
               'Today Target',
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: screenHeight * 0.02,
+                  fontSize: screenHeight * 0.018,
                   fontWeight: FontWeight.w600),
             ),
 
             
             Container(
-              height: screenHeight * 0.035, 
+              height: screenHeight * 0.03, 
               width: screenWidth * 0.08,   
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),

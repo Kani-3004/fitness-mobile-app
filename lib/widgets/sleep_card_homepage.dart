@@ -11,18 +11,20 @@ class SleepCardHomepage extends StatefulWidget {
 class _SleepCardHomepageState extends State<SleepCardHomepage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Card(
       elevation: 5,
       shadowColor: Colors.black45,
       color: Colors.white,
       child: Column(
-        //column to hold everything
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-              top: 15,
-              right: 15,
-              left: 15,
+            padding: EdgeInsets.only(
+              top: screenHeight * 0.02,
+              right: screenWidth * 0.04,
+              left: screenWidth * 0.04,
             ),
             child: Row(
               children: [
@@ -32,7 +34,7 @@ class _SleepCardHomepageState extends State<SleepCardHomepage> {
                     Text(
                       "Sleep",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: screenWidth * 0.035,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -42,7 +44,7 @@ class _SleepCardHomepageState extends State<SleepCardHomepage> {
                           colors: [
                             Color(0xFFE391D5),
                             Color(0xFFC355F2),
-                          ], // Gradient colors
+                          ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(bounds);
@@ -50,9 +52,9 @@ class _SleepCardHomepageState extends State<SleepCardHomepage> {
                       child: Text(
                         "8h 20m",
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: screenWidth * 0.04,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white, // Keep white for visibility
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -63,7 +65,13 @@ class _SleepCardHomepageState extends State<SleepCardHomepage> {
           ),
           Expanded(
             flex: 2,
-            child: SleepChartHomepage(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
+              child: SizedBox(
+                height: screenHeight * 0.15,
+                child: SleepChartHomepage(),
+              ),
+            ),
           ),
         ],
       ),

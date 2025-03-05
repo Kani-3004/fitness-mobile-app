@@ -74,9 +74,12 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text(
                     'Forgot your password?',
                     style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                        decoration: TextDecoration.underline),
+                      color: Colors.grey,
+                      fontSize: 14,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.grey,
+                      decorationThickness: 0.5,
+                    ),
                   ),
                 ),
 

@@ -23,7 +23,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Padding(
-          padding: const EdgeInsets.only(left: 8.0, top: 8.0),
+          padding: EdgeInsets.only(
+              left: MediaQuery.of(context).size.width * 0.02, top: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,13 +32,14 @@ class _HomePageState extends State<HomePage> {
                 "Welcome back",
                 style: TextStyle(
                   color: Colors.grey[600],
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.width * 0.035,
                 ),
               ),
-              const Text(
+              Text(
                 "Masi Ramezanzade",
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
+                  fontSize: MediaQuery.of(context).size.width * 0.045,
                 ),
               ),
             ],
@@ -45,7 +47,8 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 8.0, top: 8.0),
+            padding: EdgeInsets.only(
+                right: MediaQuery.of(context).size.width * 0.02, top: 8.0),
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pushReplacement(
@@ -55,8 +58,8 @@ class _HomePageState extends State<HomePage> {
                 );
               },
               icon: Container(
-                height: 40,
-                width: 40,
+                height: MediaQuery.of(context).size.width * 0.1,
+                width: MediaQuery.of(context).size.width * 0.1,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(10),
@@ -64,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Icon(
                   Icons.notifications_none,
-                  size: 18,
+                  size: MediaQuery.of(context).size.width * 0.05,
                   color: Colors.black,
                 ),
               ),
@@ -73,25 +76,26 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.04),
         child: Container(
-          width: MediaQuery.of(context).size.width,
+          width: double.infinity,
           color: Colors.white,
           child: Column(
             children: [
-              SizedBox(height: 10),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.012),
               Expanded(
                 flex: 2,
                 child: Container(
                   color: Colors.white,
-                  width: MediaQuery.of(context).size.width * 0.91,
+                  width: double.infinity,
                   child: Column(
                     children: [
                       Flexible(
                         flex: 2,
                         child: BmiCardHomepage(),
                       ),
-                      SizedBox(height: 25),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.03),
                       Flexible(
                         flex: 1,
                         child: TodayTargetHomepage(),
@@ -102,17 +106,24 @@ class _HomePageState extends State<HomePage> {
               ),
               Row(
                 children: [
-                  Text(
-                    "Activity Status",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.01),
+                    child: Text(
+                      "Activity Status",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.width * 0.05,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               Expanded(
                 flex: 3,
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.91,
+                  width: double.infinity,
                   color: Colors.white,
                   child: Column(
                     children: [
@@ -120,7 +131,8 @@ class _HomePageState extends State<HomePage> {
                         flex: 1,
                         child: HeartrateCardHomepage(),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.02),
                       Flexible(
                         flex: 1,
                         child: Row(
@@ -129,7 +141,9 @@ class _HomePageState extends State<HomePage> {
                               flex: 1,
                               child: WaterIntakeHomepage(),
                             ),
-                            SizedBox(width: 15),
+                            SizedBox(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.04),
                             Expanded(
                               flex: 1,
                               child: SleepCardHomepage(),
@@ -141,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             ],
           ),
         ),

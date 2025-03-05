@@ -11,47 +11,31 @@ class PieChartHomepage extends StatefulWidget {
 class _PieChartHomepageState extends State<PieChartHomepage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Center(
       child: SizedBox(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            SfCircularChart(
-              series: <PieSeries<ChartData, String>>[
-                PieSeries<ChartData, String>(
-                  dataSource: _getChartData(),
-                  xValueMapper: (ChartData data, _) => data.label,
-                  yValueMapper: (ChartData data, _) => data.value,
-                  pointColorMapper: (ChartData data, _) => data.color,
-                  explode: true,
-                  explodeIndex: 5,
-                  explodeOffset: "10%",
-                  startAngle: 0,
-                  endAngle: 350,
-                  dataLabelSettings: DataLabelSettings(
-                    isVisible: true,
-                    labelPosition: ChartDataLabelPosition.inside,
-                    textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+        child: SfCircularChart(
+          series: <PieSeries<ChartData, String>>[
+            PieSeries<ChartData, String>(
+              dataSource: _getChartData(),
+              xValueMapper: (ChartData data, _) => data.label,
+              yValueMapper: (ChartData data, _) => data.value,
+              pointColorMapper: (ChartData data, _) => data.color,
+              explode: true,
+              explodeIndex: 0,
+              explodeOffset: "25%",
+              // startAngle: 0,
+              endAngle: 355,
+              dataLabelSettings: DataLabelSettings(
+                isVisible: true,
+                labelPosition: ChartDataLabelPosition.inside,
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: screenWidth * 0.025,
+                  fontWeight: FontWeight.w900,
                 ),
-              ],
+              ),
             ),
-            // Positioned(
-            //   top: 27,
-            //   right: 28,
-            //   child: Text(
-            //     '20,1',
-            //     style: TextStyle(
-            //       color: Colors.white,
-            //       fontSize: 16,
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
@@ -60,7 +44,7 @@ class _PieChartHomepageState extends State<PieChartHomepage> {
 
   List<ChartData> _getChartData() {
     return [
-      ChartData('Highlighted', 20.1, Colors.transparent),
+      ChartData('Highlighted', 20.1, Color.fromARGB(255, 236, 154, 222)),
       ChartData('Base', 58, Colors.white),
     ];
   }

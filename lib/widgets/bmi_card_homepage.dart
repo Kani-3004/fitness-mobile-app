@@ -11,9 +11,12 @@ class BmiCardHomepage extends StatefulWidget {
 class _BmiCardHomepageState extends State<BmiCardHomepage> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(screenWidth * 0.05),
         gradient: LinearGradient(
           colors: [
             Color(0xFFE391D5),
@@ -22,10 +25,9 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(screenWidth * 0.04),
         child: Row(
           children: [
-            //the column of text on left of BMI card
             SizedBox(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -34,7 +36,7 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
                   Text(
                     "BMI (Body Mass Index)",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: screenWidth * 0.045,
                       color: Colors.white,
                       fontWeight: FontWeight.w800,
                     ),
@@ -42,16 +44,14 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
                   Text(
                     "You have a normal weight",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: screenWidth * 0.035,
                       color: Colors.white,
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-
-                  //used container here since elevated buttons cannot have gradient.
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
+                      borderRadius: BorderRadius.circular(screenWidth * 0.045),
                       gradient: LinearGradient(
                         colors: [
                           Color(0xFF805DF5),
@@ -60,12 +60,14 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8.0, horizontal: 15),
+                      padding: EdgeInsets.symmetric(
+                        vertical: screenHeight * 0.01,
+                        horizontal: screenWidth * 0.04,
+                      ),
                       child: Text(
                         "View more",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: screenWidth * 0.032,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -75,11 +77,13 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
                 ],
               ),
             ),
-
-            //The pie chart goes here
             Flexible(
               flex: 1,
-              child: PieChartHomepage(),
+              child: SizedBox(
+                width: screenWidth * 0.3,
+                height: screenWidth * 0.3,
+                child: PieChartHomepage(),
+              ),
             ),
           ],
         ),

@@ -14,6 +14,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
   String selectedValue = 'Weekly'; // Default selected value
   final List<String> options = ['Weekly', 'Daily', 'Monthly'];
   @override
+  @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;

@@ -80,8 +80,8 @@ class _HeartrateChartHomepageState extends State<HeartrateChartHomepage> {
           yValueMapper: (HeartRateData data, _) => data.bpm,
           gradient: LinearGradient(
             colors: [
-              const Color.fromARGB(255, 137, 84, 147).withOpacity(0.4),
-              const Color.fromARGB(255, 82, 107, 169).withOpacity(0.2),
+              Color(0x66895493),
+              const Color(0x33526BA9),
               Colors.transparent,
             ],
             stops: [0.0, 0.6, 1.0],

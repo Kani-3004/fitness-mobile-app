@@ -67,7 +67,14 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
                     ),
                     child: Image.asset("assets/images/activity.png"),
                   ),
-                  onPressed: () => _onItemTapped(1),
+                  onPressed: () {
+                    // Navigator.of(context).pushReplacement(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => ActivityTrackerPage(),
+                    //   ),
+                    // );
+                  },
+                  // onPressed: () => _onItemTapped(1),
                 ),
                 SizedBox(width: 48),
                 IconButton(

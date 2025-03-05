@@ -39,9 +39,11 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => ActivityTrackerPage(),
-                ));
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => ActivityTrackerPage(),
+                  ),
+                );
               },
               child: Container(
                 constraints: BoxConstraints(

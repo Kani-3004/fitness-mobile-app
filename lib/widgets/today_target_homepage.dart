@@ -1,4 +1,3 @@
-import 'package:fitness_mobile_app/screens/activity_tracker_page.dart';
 import 'package:flutter/material.dart';
 
 class TodayTargetHomepage extends StatefulWidget {

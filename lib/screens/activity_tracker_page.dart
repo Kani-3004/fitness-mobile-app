@@ -11,7 +11,9 @@ class ActivityTrackerPage extends StatefulWidget {
 }
 
 class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
-  String selectedPeriod = 'Weekly';
+  String selectedValue = 'Weekly'; // Default selected value
+  final List<String> options = ['Weekly', 'Daily', 'Monthly'];
+  @override
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -82,8 +84,9 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: TodayTargetTrackerPage()),
+                    padding: const EdgeInsets.all(16.0),
+                    child: TodayTargetTrackerPage()
+                  ),
                 ),
               ),
               Padding(
@@ -99,42 +102,35 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                           fontSize: 16,
                           fontWeight: FontWeight.w600),
                     ),
-                    Container(
-                      height: 30,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
+                    GestureDetector(
+                      onTap: () {
+                        _showDropdownMenu(context);
+                      },
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                        decoration: BoxDecoration(
                           gradient: LinearGradient(
-                              colors: [
-                                Color(0xff00f0ff),
-                                Color(0xff00ff66),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight),
-                          shape: BoxShape.rectangle),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: DropdownButton<String>(
-                          value: selectedPeriod,
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: Colors.white,
-                            size: 15,
+                            colors: [
+                              Color(0xff00f0ff),
+                              Color(0xff00ff66)
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight
                           ),
-                          underline: Container(),
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              selectedPeriod = newValue!;
-                            });
-                          },
-                          items: <String>['Daily', 'Weekly', 'Monthly']
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value,
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12)),
-                            );
-                          }).toList(),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              selectedValue,
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 12),
+                            ),
+                            Icon(Icons.keyboard_arrow_down,
+                                color: Colors.white),
+                          ],
                         ),
                       ),
                     ),
@@ -180,15 +176,15 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
               Column(
                 children: [
                   LatestActivityTargetpage(
-                      imagePath: 'assets/images/drinking_girl.png',
-                      message: 'Drinking 300ml Water',
-                      timeInfo: 'About 3 minutes ago',
-                      imageBgColor: Color(0xffB3FCEC)),
+                    imagePath: 'assets/images/drinking_girl.png', 
+                    message: 'Drinking 300ml Water', 
+                    timeInfo: 'About 3 minutes ago', 
+                    imageBgColor: Color(0xffB3FCEC)),
                   LatestActivityTargetpage(
-                      imagePath: 'assets/images/eating_girl.png',
-                      message: 'Eat Snack (Fitbar)',
-                      timeInfo: 'About 10 minutes ago',
-                      imageBgColor: Color(0xffF0D3F6))
+                    imagePath: 'assets/images/eating_girl.png', 
+                    message: 'Eat Snack (Fitbar)', 
+                    timeInfo: 'About 10 minutes ago', 
+                    imageBgColor: Color(0xffF0D3F6))
                 ],
               ),
             ],
@@ -197,4 +193,41 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
       ),
     );
   }
+  void _showDropdownMenu(BuildContext context) async {
+    final RenderBox renderBox = context.findRenderObject() as RenderBox;
+    final Offset offset = renderBox.localToGlobal(Offset.zero);
+
+    List<String> filteredOptions =
+        options.where((item) => item != selectedValue).toList();
+
+    String? newValue = await showMenu<String>(
+      context: context,
+      position: RelativeRect.fromLTRB(
+        offset.dx + 250,
+        offset.dy + 340,
+        offset.dx + 20,
+        offset.dy + renderBox.size.height + (filteredOptions.length * 48),
+      ),
+      items: filteredOptions.map((String value) {
+        return PopupMenuItem<String>(
+          value: value,
+          child: Text(
+            value,
+            style: TextStyle(color: Colors.black),
+          ),
+        );
+      }).toList(),
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+        side: BorderSide(color: Color.fromARGB(255, 249, 250, 252), width: 1.5),
+      ),
+    );
+    if (newValue != null) {
+      setState(() {
+        selectedValue = newValue;
+      });
+    }
+  }
 }
+

@@ -33,7 +33,9 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                   borderRadius: BorderRadius.circular(10),
                   color: Color(0xffF7F8F8)),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  
+                },
                 icon: Icon(
                   Icons.arrow_back_ios_new_rounded,
                   size: 15,

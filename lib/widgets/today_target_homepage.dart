@@ -37,13 +37,7 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
 
             //Check button
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => ActivityTrackerPage(),
-                  ),
-                );
-              },
+              onTap: () {},
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),

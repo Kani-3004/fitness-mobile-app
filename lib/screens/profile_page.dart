@@ -1,3 +1,8 @@
+import 'package:fitness_mobile_app/widgets/notifications_profile_page.dart';
+import 'package:fitness_mobile_app/widgets/otherdetails_profile_page.dart';
+import 'package:fitness_mobile_app/widgets/user_accountdetails_profile_page.dart';
+import 'package:fitness_mobile_app/widgets/userfitness_profile_page.dart';
+import 'package:fitness_mobile_app/widgets/userinfo_profile_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -10,6 +15,12 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final double screenHeight = screenSize.height;
+    final double screenWidth = screenSize.width;
+    final double padding = screenWidth * 0.04;
+    final double iconSize = screenWidth * 0.04;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -17,47 +28,48 @@ class _ProfilePageState extends State<ProfilePage> {
         scrolledUnderElevation: 0,
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.only(top: 16.0, left: 16.0),
+          padding: EdgeInsets.only(top: padding, left: padding),
           child: Container(
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(10),
-              color: Color(0xffF7F8F8),
+              color: const Color(0xffF7F8F8),
             ),
             child: IconButton(
               onPressed: () {},
               icon: Icon(
                 Icons.arrow_back_ios_new_rounded,
-                size: 15,
+                size: iconSize,
               ),
             ),
           ),
         ),
         title: Padding(
-          padding: const EdgeInsets.only(top: 16.0),
+          padding: EdgeInsets.only(top: padding),
           child: Text(
             'Profile',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 16,
+              fontSize: screenWidth * 0.045,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(top: 16.0, right: 16.0),
+            padding: EdgeInsets.only(top: padding, right: padding),
             child: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(10),
-                color: Color(0xffF7F8F8),
+                color: const Color(0xffF7F8F8),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(screenWidth * 0.02),
                 child: Image.asset(
                   'assets/images/Detail-Navs.png',
+                  width: screenWidth * 0.06,
                 ),
               ),
             ),
@@ -66,102 +78,90 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // User Data
-                Card(
-                  elevation: 0,
-                  color: Colors.white,
-                  shadowColor: Colors.black45,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      "User Data",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+          padding: EdgeInsets.all(padding),
+          child: Column(
+            children: [
+              // User data
+              Container(
+                height: screenHeight * 0.1,
+                margin: const EdgeInsets.only(bottom: 10),
+                color: Colors.white,
+                child: UserinfoProfilePage(
+                  screenHeight: screenHeight,
+                  screenWidth: screenWidth,
                 ),
-                SizedBox(height: 10),
+              ),
 
-                // User Fitness
-                Card(
-                  elevation: 5,
-                  shadowColor: Colors.black45,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      "User Fitness",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+              // User fitness
+              Container(
+                height: screenHeight * 0.12,
+                margin: const EdgeInsets.only(bottom: 10),
+                child: UserfitnessProfilePage(
+                  screenHeight: screenHeight,
+                  screenWidth: screenWidth,
                 ),
-                SizedBox(height: 10),
+              ),
 
-                // Account Details
-                Card(
-                  elevation: 5,
-                  shadowColor: Colors.black45,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      "Account Details",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              // Account details
+              Container(
+                height: screenHeight * 0.3,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color.fromARGB(25, 0, 0, 0),
+                      blurRadius: 30,
+                      spreadRadius: 5,
+                      offset: const Offset(0, 10),
                     ),
-                  ),
+                  ],
                 ),
-                SizedBox(height: 10),
+                margin: const EdgeInsets.only(bottom: 10),
+                child: UserAccountdetailsProfilePage(
+                  screenHeight: screenHeight,
+                  screenWidth: screenWidth,
+                ),
+              ),
 
-                // Notification
-                Card(
-                  elevation: 5,
-                  shadowColor: Colors.black45,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      "Notification",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              // Notification
+              Container(
+                height: screenHeight * 0.13,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color.fromARGB(25, 0, 0, 0),
+                      blurRadius: 30,
+                      spreadRadius: 5,
+                      offset: const Offset(0, 10),
                     ),
-                  ),
+                  ],
                 ),
-                SizedBox(height: 10),
+                margin: const EdgeInsets.only(bottom: 10),
+                child: NotificationsProfilePage(
+                  screenHeight: screenHeight,
+                  screenWidth: screenWidth,
+                ),
+              ),
 
-                // Other Box
-                Card(
-                  elevation: 5,
-                  shadowColor: Colors.black45,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      "Other Box",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              // Other details
+              Container(
+                height: screenHeight * 0.3,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color.fromARGB(25, 0, 0, 0),
+                      blurRadius: 30,
+                      spreadRadius: 5,
+                      offset: const Offset(0, 10),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+                margin: const EdgeInsets.only(bottom: 10),
+                child: OtherdetailsProfilePage(
+                  screenHeight: screenHeight,
+                  screenWidth: screenWidth,
+                ),
+              ),
+            ],
           ),
         ),
       ),

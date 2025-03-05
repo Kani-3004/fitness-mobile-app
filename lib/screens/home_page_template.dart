@@ -35,67 +35,67 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          toolbarHeight: MediaQuery.of(context).size.height * 0.07,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: Padding(
-            padding: const EdgeInsets.only(left: 8.0, top: 8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Welcome back",
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    fontSize: 18,
-                  ),
-                ),
-                const Text(
-                  "Masi Ramezanzade",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0, top: 8.0),
-              child: IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => NotificationPage(),
-                    ),
-                  );
-                },
-                icon: Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xffF7F8F8)),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => NotificationPage(),
-                        ),
-                      );
-                    },
-                    icon: Icon(
-                      Icons.notifications_none,
-                      size: 18,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+        // appBar: AppBar(
+        //   toolbarHeight: MediaQuery.of(context).size.height * 0.07,
+        //   backgroundColor: Colors.white,
+        //   elevation: 0,
+        //   title: Padding(
+        //     padding: const EdgeInsets.only(left: 8.0, top: 8.0),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Text(
+        //           "Welcome back",
+        //           style: TextStyle(
+        //             color: Colors.grey[600],
+        //             fontSize: 18,
+        //           ),
+        //         ),
+        //         const Text(
+        //           "Masi Ramezanzade",
+        //           style: TextStyle(
+        //             fontWeight: FontWeight.w900,
+        //           ),
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        //   actions: [
+        //     Padding(
+        //       padding: const EdgeInsets.only(right: 8.0, top: 8.0),
+        //       child: IconButton(
+        //         onPressed: () {
+        //           Navigator.of(context).pushReplacement(
+        //             MaterialPageRoute(
+        //               builder: (context) => NotificationPage(),
+        //             ),
+        //           );
+        //         },
+        //         icon: Container(
+        //           height: 40,
+        //           width: 40,
+        //           decoration: BoxDecoration(
+        //               shape: BoxShape.rectangle,
+        //               borderRadius: BorderRadius.circular(10),
+        //               color: Color(0xffF7F8F8)),
+        //           child: IconButton(
+        //             onPressed: () {
+        //               Navigator.of(context).pushReplacement(
+        //                 MaterialPageRoute(
+        //                   builder: (context) => NotificationPage(),
+        //                 ),
+        //               );
+        //             },
+        //             icon: Icon(
+        //               Icons.notifications_none,
+        //               size: 18,
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
         body: pages[selectedIndex],
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,

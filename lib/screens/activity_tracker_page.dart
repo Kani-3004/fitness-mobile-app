@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/home_page_template.dart';
 import 'package:fitness_mobile_app/screens/today_target_tracker_page.dart';
 import 'package:fitness_mobile_app/widgets/activity_progress_targetpage.dart';
 import 'package:fitness_mobile_app/widgets/latest_activity_targetpage.dart';
@@ -34,7 +35,9 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                   color: Color(0xffF7F8F8)),
               child: IconButton(
                 onPressed: () {
-                  
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => HomePageTemplate(),
+                  ));
                 },
                 icon: Icon(
                   Icons.arrow_back_ios_new_rounded,
@@ -113,13 +116,9 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                             EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [
-                              Color(0xff00f0ff),
-                              Color(0xff00ff66)
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight
-                          ),
+                              colors: [Color(0xff00f0ff), Color(0xff00ff66)],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight),
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Row(
@@ -178,15 +177,15 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
               Column(
                 children: [
                   LatestActivityTargetpage(
-                    imagePath: 'assets/images/drinking_girl.png', 
-                    message: 'Drinking 300ml Water', 
-                    timeInfo: 'About 3 minutes ago', 
-                    imageBgColor: Color(0xffB3FCEC)),
+                      imagePath: 'assets/images/drinking_girl.png',
+                      message: 'Drinking 300ml Water',
+                      timeInfo: 'About 3 minutes ago',
+                      imageBgColor: Color(0xffB3FCEC)),
                   LatestActivityTargetpage(
-                    imagePath: 'assets/images/eating_girl.png', 
-                    message: 'Eat Snack (Fitbar)', 
-                    timeInfo: 'About 10 minutes ago', 
-                    imageBgColor: Color(0xffF0D3F6))
+                      imagePath: 'assets/images/eating_girl.png',
+                      message: 'Eat Snack (Fitbar)',
+                      timeInfo: 'About 10 minutes ago',
+                      imageBgColor: Color(0xffF0D3F6))
                 ],
               ),
             ],
@@ -195,6 +194,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
       ),
     );
   }
+
   void _showDropdownMenu(BuildContext context) async {
     final RenderBox renderBox = context.findRenderObject() as RenderBox;
     final Offset offset = renderBox.localToGlobal(Offset.zero);
@@ -232,4 +232,3 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
     }
   }
 }
-

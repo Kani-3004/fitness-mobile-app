@@ -5,10 +5,12 @@ class ActivityProgressTargetpage extends StatefulWidget {
   const ActivityProgressTargetpage({super.key});
 
   @override
-  State<ActivityProgressTargetpage> createState() => _ActivityProgressTargetpageState();
+  State<ActivityProgressTargetpage> createState() =>
+      _ActivityProgressTargetpageState();
 }
 
-class _ActivityProgressTargetpageState extends State<ActivityProgressTargetpage> {
+class _ActivityProgressTargetpageState
+    extends State<ActivityProgressTargetpage> {
   late List<PatientData> _chartData;
 
   @override

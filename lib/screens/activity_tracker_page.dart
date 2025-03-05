@@ -204,7 +204,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
       context: context,
       position: RelativeRect.fromLTRB(
         offset.dx + 250,
-        offset.dy + 340,
+        offset.dy + 310,
         offset.dx + 20,
         offset.dy + renderBox.size.height + (filteredOptions.length * 48),
       ),

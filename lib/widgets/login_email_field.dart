@@ -28,7 +28,7 @@ class LoginEmailField extends StatelessWidget {
         if (!emailRegex.hasMatch(value)) {
           return "Please enter a valid E-mail";
         }
-        if (value != "pragadeeswaran@boodskap.io") {
+        if (value != "demo@boodskap.io") {
           return "Incorrect Email";
         }
         return null;

@@ -28,56 +28,60 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
         padding: EdgeInsets.all(screenWidth * 0.04),
         child: Row(
           children: [
-            SizedBox(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "BMI (Body Mass Index)",
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.045,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                  Text(
-                    "You have a normal weight",
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.035,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(screenWidth * 0.045),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color(0xFF805DF5),
-                          Color(0xFFA675F0),
-                        ],
+            Expanded(
+              flex: 2,
+              child: SizedBox(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "BMI (Body Mass Index)",
+                      style: TextStyle(
+                        fontSize: screenWidth * 0.045,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: screenHeight * 0.01,
-                        horizontal: screenWidth * 0.04,
+                    Text(
+                      "You have a normal weight",
+                      style: TextStyle(
+                        fontSize: screenWidth * 0.035,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
                       ),
-                      child: Text(
-                        "View more",
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.032,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(screenWidth * 0.045),
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF805DF5),
+                            Color(0xFFA675F0),
+                          ],
                         ),
                       ),
-                    ),
-                  )
-                ],
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: screenHeight * 0.01,
+                          horizontal: screenWidth * 0.04,
+                        ),
+                        child: Text(
+                          "View more",
+                          style: TextStyle(
+                            fontSize: screenWidth * 0.032,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
-            Flexible(
+            Expanded(
               flex: 1,
               child: SizedBox(
                 width: screenWidth * 0.3,

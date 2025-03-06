@@ -21,3 +21,4 @@ class FitnessMobileApp extends StatelessWidget {
     );
   }
 }
+

@@ -17,24 +17,16 @@ class _UserfitnessProfilePageState extends State<UserfitnessProfilePage> {
     double screenHeight = widget.screenHeight;
 
     // Adjust padding and font size dynamically
-    double padding = screenWidth * 0.04;
+    double padding = screenWidth * 0.03;
     double fontSize = screenWidth * 0.04;
 
-    return Card(
-      color: Colors.white,
-      elevation: 0,
-      shadowColor: Colors.black45,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          buildProfileCard("180cm", "Height", padding, fontSize),
-          buildProfileCard("65kg", "Weight", padding, fontSize),
-          buildProfileCard("22yo", "Age", padding, fontSize),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        buildProfileCard("180cm", "Height", padding, fontSize),
+        buildProfileCard("65kg", "Weight", padding, fontSize),
+        buildProfileCard("22yo", "Age", padding, fontSize),
+      ],
     );
   }
 

@@ -1,5 +1,5 @@
-import 'package:fitness_mobile_app/widgets/notifications_profile_page.dart';
-import 'package:fitness_mobile_app/widgets/otherdetails_profile_page.dart';
+import 'package:fitness_mobile_app/widgets/user_notifications_profile_page.dart';
+import 'package:fitness_mobile_app/widgets/user_otherdetails_profile_page.dart';
 import 'package:fitness_mobile_app/widgets/user_accountdetails_profile_page.dart';
 import 'package:fitness_mobile_app/widgets/userfitness_profile_page.dart';
 import 'package:fitness_mobile_app/widgets/userinfo_profile_page.dart';
@@ -104,7 +104,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
               // Account details
               Container(
-                height: screenHeight * 0.3,
+                height: screenHeight * 0.28,
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
@@ -115,7 +115,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ],
                 ),
-                margin: const EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 8),
                 child: UserAccountdetailsProfilePage(
                   screenHeight: screenHeight,
                   screenWidth: screenWidth,
@@ -124,7 +124,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
               // Notification
               Container(
-                height: screenHeight * 0.13,
+                height: screenHeight * 0.15,
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(

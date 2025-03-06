@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class UserinfoProfilePage extends StatefulWidget {
   final double screenHeight;
@@ -16,6 +17,7 @@ class UserinfoProfilePage extends StatefulWidget {
 class _UserinfoProfilePageState extends State<UserinfoProfilePage> {
   @override
   Widget build(BuildContext context) {
+    double minDimension = min(widget.screenWidth, widget.screenHeight);
     return Card(
       margin: EdgeInsets.zero,
       color: Colors.white,
@@ -36,7 +38,7 @@ class _UserinfoProfilePageState extends State<UserinfoProfilePage> {
             CircleAvatar(
               foregroundImage:
                   const AssetImage("assets/images/Spiderman pfp.jpg"),
-              radius: widget.screenWidth * 0.08,
+              radius: minDimension * 0.08,
             ),
             SizedBox(width: widget.screenWidth * 0.02),
             Expanded(
@@ -49,16 +51,16 @@ class _UserinfoProfilePageState extends State<UserinfoProfilePage> {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: widget.screenWidth * 0.04,
+                      fontSize: widget.screenWidth * 0.038,
                     ),
                   ),
-                  SizedBox(height: widget.screenHeight * 0.005),
+                  SizedBox(height: widget.screenHeight * 0.004),
                   Text(
                     "Lose a Fat Program",
                     style: TextStyle(
                       color: Colors.grey,
                       fontWeight: FontWeight.w400,
-                      fontSize: widget.screenWidth * 0.035,
+                      fontSize: widget.screenWidth * 0.030,
                     ),
                   ),
                 ],

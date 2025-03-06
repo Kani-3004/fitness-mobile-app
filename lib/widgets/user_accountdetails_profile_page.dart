@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class UserAccountdetailsProfilePage extends StatefulWidget {
   final double screenHeight;
@@ -27,25 +28,23 @@ class _UserAccountdetailsProfilePageState
         borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.symmetric(
+            vertical: widget.screenWidth * 0.03,
+            horizontal: widget.screenWidth * 0.04),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Flexible(
-              flex: 1,
-              child: Text(
-                "Account",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              "Account",
+              style: TextStyle(
+                fontSize: widget.screenWidth * 0.045,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 0),
+            SizedBox(height: max(widget.screenHeight * 0.015, 6)),
             Expanded(
-              flex: 4,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _buildAccountRow(
                       "assets/images/icon_profile.png", "Personal data"),
@@ -65,35 +64,35 @@ class _UserAccountdetailsProfilePageState
   }
 
   Widget _buildAccountRow(String iconPath, String title) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(iconPath, width: 24, height: 24),
-                SizedBox(
-                  width: 10,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: widget.screenHeight * 0.005),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Image.asset(
+                iconPath,
+                width: max(widget.screenWidth * 0.06, 18),
+                height: max(widget.screenWidth * 0.06, 18),
+              ),
+              SizedBox(width: max(widget.screenWidth * 0.02, 6)),
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: max(widget.screenWidth * 0.04, 11),
+                  fontWeight: FontWeight.w500,
                 ),
-                Text(
-                  title,
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                ),
-              ],
-            ),
-            Icon(
-              Icons.keyboard_arrow_right,
-              size: 30,
-              color: Colors.grey[400]!,
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+          Icon(
+            Icons.keyboard_arrow_right,
+            size: max(widget.screenWidth * 0.07, 20),
+            color: Colors.grey[400]!,
+          ),
+        ],
       ),
     );
   }

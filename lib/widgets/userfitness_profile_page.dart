@@ -14,7 +14,6 @@ class _UserfitnessProfilePageState extends State<UserfitnessProfilePage> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = widget.screenWidth;
-    double screenHeight = widget.screenHeight;
 
     // Adjust padding and font size dynamically
     double padding = screenWidth * 0.03;

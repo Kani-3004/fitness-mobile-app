@@ -113,13 +113,13 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                       },
                       child: Container(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                               colors: [Color(0xff00f0ff), Color(0xff00ff66)],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight),
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

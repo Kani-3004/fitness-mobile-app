@@ -32,7 +32,7 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
             Text(
               "Today Target",
               style: TextStyle(
-                fontSize: screenWidth * 0.045,
+                fontSize: screenWidth * 0.040,
                 color: Colors.black,
                 fontWeight: FontWeight.w800,
               ),
@@ -68,7 +68,7 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
                     style: TextStyle(
                       fontSize: screenWidth * 0.032,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),

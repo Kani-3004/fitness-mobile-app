@@ -104,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.020),
               Row(
                 children: [
                   Padding(
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.015),
               Expanded(
                 flex: 3,
                 child: Container(

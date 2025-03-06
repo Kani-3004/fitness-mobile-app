@@ -53,7 +53,7 @@ class _HeartrateChartHomepageState extends State<HeartrateChartHomepage> {
       shadowColor: Colors.transparent,
       shouldAlwaysShow: true,
       canShowMarker: false,
-      tooltipPosition: TooltipPosition.pointer,
+      tooltipPosition: TooltipPosition.auto,
       activationMode: ActivationMode.singleTap,
       builder: (dynamic data, dynamic point, dynamic series, int pointIndex,
           int seriesIndex) {
@@ -110,7 +110,7 @@ class _HeartrateChartHomepageState extends State<HeartrateChartHomepage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
-          borderColor: Color(0xFFD47AE6),
+          borderColor: Color(0xFFD778E3),
           borderWidth: 1.5,
           markerSettings: MarkerSettings(isVisible: false),
         ),

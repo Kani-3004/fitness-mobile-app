@@ -144,7 +144,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
               // Other details
               Container(
-                height: screenHeight * 0.3,
+                height: screenHeight * 0.28,
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(

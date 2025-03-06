@@ -50,8 +50,12 @@ class _OtherdetailsProfilePageState extends State<OtherdetailsProfilePage> {
                   _buildOtherRow(
                       "assets/images/Icon-Privacy.png", "Privacy Policy"),
                   _buildOtherRow("assets/images/Icon-Setting.png", "Settings"),
+
+                  //The logout Row that is custom made
                   Padding(
-                    padding: EdgeInsets.only(left: widget.screenWidth * 0.01),
+                    padding: EdgeInsets.only(
+                        left: widget.screenWidth * 0.01,
+                        bottom: widget.screenHeight * 0.005),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

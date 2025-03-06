@@ -89,9 +89,9 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
-                    child: TodayTargetTrackerPage()
-                  ),
+                      padding: const EdgeInsets.only(
+                          top: 16.0, left: 16.0, right: 16.0),
+                      child: TodayTargetTrackerPage()),
                 ),
               ),
               Padding(
@@ -126,8 +126,8 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                           children: [
                             Text(
                               selectedValue,
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 14),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 14),
                             ),
                             Icon(Icons.keyboard_arrow_down,
                                 color: Colors.white),
@@ -225,10 +225,8 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
         side: BorderSide(color: Color.fromARGB(255, 249, 250, 252), width: 1.5),
       ),
     );
-    if (newValue != null) {
-      setState(() {
-        selectedValue = newValue;
-      });
-    }
+    setState(() {
+      selectedValue = newValue!;
+    });
   }
 }

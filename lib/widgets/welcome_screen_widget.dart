@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/onboarding_one.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreenWidget extends StatefulWidget {
@@ -23,68 +24,69 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: widget.bgColor,
-          begin: Alignment.centerRight,
-          end: Alignment.centerLeft
-        )
-      ),
+          gradient: LinearGradient(
+              colors: widget.bgColor,
+              begin: Alignment.centerRight,
+              end: Alignment.centerLeft)),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Spacer(),
-          Column(mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               RichText(
                 text: TextSpan(
-                  text: 'DIDPOOL',
-                  style: TextStyle(
-                    color: widget.richTextColor,
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                  ),
-                children: [
-                  TextSpan(
-                    text: 'Fit',
+                    text: 'DIDPOOL',
                     style: TextStyle(
-                      color: Color(0xff1D1617),
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold
-                    )
-                  )
-                ]
-                ),
-              ),
-              SizedBox(height: 10,),
-               Text(
-          'Everybody Can Train',
-          style: TextStyle(
-            color: widget.textColor,
-            fontSize: 18,
-            decoration: TextDecoration.none
-          ),
+                      color: widget.richTextColor,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
                     ),
+                    children: [
+                      TextSpan(
+                          text: 'Fit',
+                          style: TextStyle(
+                              color: Color(0xff1D1617),
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold))
+                    ]),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Everybody Can Train',
+                style: TextStyle(
+                    color: widget.textColor,
+                    fontSize: 20,
+                    decoration: TextDecoration.none),
+              ),
             ],
           ),
-         Spacer(),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
             child: InkWell(
-              onTap: (){},
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => OnboardingOne()));
+              },
               child: Container(
-                width: 300,
-                height: 50,
+                width: 350,
+                height: 70,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: widget.buttonGradientColor,
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight
-                  ),
-                  borderRadius: BorderRadius.circular(30)
-                ),
+                    gradient: LinearGradient(
+                        colors: widget.buttonGradientColor,
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight),
+                    borderRadius: BorderRadius.circular(40)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Align(
@@ -92,10 +94,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                     child: Text(
                       'Get Started',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold
-                      ),
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

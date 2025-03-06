@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/register_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingOne extends StatefulWidget {
@@ -11,37 +12,122 @@ class _OnboardingOneState extends State<OnboardingOne> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Stack(
-          children: [
-            ClipPath(
-              clipper: WaveClipper(),
-              child: Container(
-                height: screenHeight * 0.5, // 40% of screen height
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFFE38FD8),
-                      Color(0xFFC457F2),
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
+      backgroundColor: Colors.white,
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(
+            children: [
+              // Curved Background
+              ClipPath(
+                clipper: WaveClipper(),
+                child: Container(
+                  height: screenHeight * 0.5,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFFE38FD8),
+                        Color(0xFFC457F2),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                  ),
+                ),
+              ),
+
+              // Clipped Image inside the curve
+              Positioned(
+                top: screenHeight * 0.029,
+                left: screenWidth * 0.01,
+                right: screenWidth * 0.01,
+                child: ClipPath(
+                  clipper: WaveClipper(),
+                  child: Image.asset(
+                    "assets/images/onboarding_one.png",
+                    width: screenWidth * 0.9,
+                    height: screenHeight * 0.47,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          Spacer(flex: 1),
+
+          // Text
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                'Track Your Goal',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 10),
+
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              "Don't worry if you have trouble determining your goals. We can help you determine your goals and track them.",
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
+
+          Spacer(flex: 2),
+
+          // Floating Action Button
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => RegisterPage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                      colors: [Color(0xFF825FF5), Color(0xFFA677F2)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.chevron_right,
+                    color: Colors.white,
+                    size: 30,
                   ),
                 ),
               ),
             ),
-            Positioned(
-              top: screenHeight * 0.1,
-              child: Image.asset(
-                "assets/images/onboarding_one.png",
-                fit: BoxFit.contain,
-              ),
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -53,14 +139,16 @@ class WaveClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = Path();
 
-    path.lineTo(0, size.height * 0.8); // Start from bottom-left
+    path.lineTo(0, size.height * 0.82);
 
     path.quadraticBezierTo(
-      size.width * 0.6, size.height * 1.33, // Control point
-      size.width, size.height * 0.6, // End point
+      size.width * 0.74,
+      size.height * 1.33,
+      size.width,
+      size.height * 0.45,
     );
 
-    path.lineTo(size.width, 0); // Close at top-right
+    path.lineTo(size.width, 0);
     path.close();
 
     return path;

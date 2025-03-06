@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/workout_tracker_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -52,8 +53,18 @@ class _UserAccountdetailsProfilePageState
                       "assets/images/icon_achievement.png", "Achievement"),
                   _buildAccountRow(
                       "assets/images/icon_activity.png", "Activity History"),
-                  _buildAccountRow(
-                      "assets/images/icon_workout.png", "Workout Progress"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => WorkoutTrackerPage()
+                        )
+                      );
+                    },
+                    child: _buildAccountRow(
+                        "assets/images/icon_workout.png", "Workout Progress"),
+                  ),
                 ],
               ),
             ),

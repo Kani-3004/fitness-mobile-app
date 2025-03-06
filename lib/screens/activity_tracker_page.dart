@@ -127,7 +127,11 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                             Text(
                               selectedValue,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 14),
+                                  TextStyle(
+                                    color: Colors.white, 
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold
+                                  ),
                             ),
                             Icon(Icons.keyboard_arrow_down,
                                 color: Colors.white),

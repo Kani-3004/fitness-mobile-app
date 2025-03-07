@@ -38,43 +38,43 @@ class _WaterintakeStepperHomepageState
         ),
         StepperData(
           title: StepperText(
-            "6am - 8am",
-            textStyle: TextStyle(
-              fontSize: screenWidth * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          subtitle: StepperText(
-            "600ml",
-            textStyle: TextStyle(
-              fontSize: screenWidth * 0.020,
-              fontWeight: FontWeight.w400,
-              color: Colors.grey,
-            ),
-          ),
-          iconWidget: _buildStepIcon(screenWidth),
-        ),
-        StepperData(
-          title: StepperText(
-            "6am - 8am",
-            textStyle: TextStyle(
-              fontSize: screenWidth * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          subtitle: StepperText(
-            "600ml",
-            textStyle: TextStyle(
-              fontSize: screenWidth * 0.020,
-              fontWeight: FontWeight.w400,
-              color: Colors.grey,
-            ),
-          ),
-          iconWidget: _buildStepIcon(screenWidth),
-        ),
-        StepperData(
-          title: StepperText(
             "9am - 11am",
+            textStyle: TextStyle(
+              fontSize: screenWidth * 0.025,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          subtitle: StepperText(
+            "800ml",
+            textStyle: TextStyle(
+              fontSize: screenWidth * 0.020,
+              fontWeight: FontWeight.w400,
+              color: Colors.grey,
+            ),
+          ),
+          iconWidget: _buildStepIcon(screenWidth),
+        ),
+        StepperData(
+          title: StepperText(
+            "12pm - 2pm",
+            textStyle: TextStyle(
+              fontSize: screenWidth * 0.025,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          subtitle: StepperText(
+            "800ml",
+            textStyle: TextStyle(
+              fontSize: screenWidth * 0.020,
+              fontWeight: FontWeight.w400,
+              color: Colors.grey,
+            ),
+          ),
+          iconWidget: _buildStepIcon(screenWidth),
+        ),
+        StepperData(
+          title: StepperText(
+            "3pm - 5pm",
             textStyle: TextStyle(
               fontSize: screenWidth * 0.025,
               fontWeight: FontWeight.bold,

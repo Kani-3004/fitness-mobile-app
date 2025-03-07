@@ -21,11 +21,11 @@ class _PieChartHomepageState extends State<PieChartHomepage> {
               xValueMapper: (ChartData data, _) => data.label,
               yValueMapper: (ChartData data, _) => data.value,
               pointColorMapper: (ChartData data, _) => data.color,
+              pointRadiusMapper: (ChartData data, _) => data.radius,
               explode: true,
               explodeIndex: 0,
-              explodeOffset: "25%",
-              // startAngle: 0,
-              endAngle: 355,
+              explodeOffset: "0%",
+              endAngle: 360,
               dataLabelSettings: DataLabelSettings(
                 isVisible: true,
                 labelPosition: ChartDataLabelPosition.inside,
@@ -44,8 +44,13 @@ class _PieChartHomepageState extends State<PieChartHomepage> {
 
   List<ChartData> _getChartData() {
     return [
-      ChartData('Highlighted', 20.1, Color.fromARGB(255, 236, 154, 222)),
-      ChartData('Base', 58, Colors.white),
+      ChartData(
+        'Highlighted',
+        20.1,
+        Color.fromARGB(255, 236, 154, 222),
+        '115%',
+      ),
+      ChartData('Base', 58, Colors.white, '100%'),
     ];
   }
 }
@@ -54,6 +59,7 @@ class ChartData {
   final String label;
   final double value;
   final Color color;
+  final String radius;
 
-  ChartData(this.label, this.value, this.color);
+  ChartData(this.label, this.value, this.color, this.radius);
 }

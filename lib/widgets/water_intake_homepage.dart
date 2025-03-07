@@ -39,10 +39,7 @@ class _WaterIntakeHomepageState extends State<WaterIntakeHomepage> {
               ShaderMask(
                 shaderCallback: (Rect bounds) {
                   return LinearGradient(
-                    colors: [
-                      Color(0xFFE391D5),
-                      Color(0xFFC355F2),
-                    ],
+                    colors: [Color(0xFFE391D5), Color(0xFFC355F2)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ).createShader(bounds);
@@ -67,6 +64,7 @@ class _WaterIntakeHomepageState extends State<WaterIntakeHomepage> {
               ),
               SizedBox(height: screenHeight * 0.01),
               Expanded(
+                flex: 2,
                 child: SingleChildScrollView(
                   child: WaterintakeStepperHomepage(),
                 ),

@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/workout_tracker_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -24,13 +25,12 @@ class _UserAccountdetailsProfilePageState
       elevation: 0,
       color: Colors.white,
       shadowColor: Colors.transparent,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
         padding: EdgeInsets.symmetric(
-            vertical: widget.screenWidth * 0.03,
-            horizontal: widget.screenWidth * 0.04),
+          vertical: widget.screenWidth * 0.03,
+          horizontal: widget.screenWidth * 0.04,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -47,13 +47,30 @@ class _UserAccountdetailsProfilePageState
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _buildAccountRow(
-                      "assets/images/icon_profile.png", "Personal data"),
+                    "assets/images/icon_profile.png",
+                    "Personal data",
+                  ),
                   _buildAccountRow(
-                      "assets/images/icon_achievement.png", "Achievement"),
+                    "assets/images/icon_achievement.png",
+                    "Achievement",
+                  ),
                   _buildAccountRow(
-                      "assets/images/icon_activity.png", "Activity History"),
-                  _buildAccountRow(
-                      "assets/images/icon_workout.png", "Workout Progress"),
+                    "assets/images/icon_activity.png",
+                    "Activity History",
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => WorkoutTrackerPage(),
+                        ),
+                      );
+                    },
+                    child: _buildAccountRow(
+                      "assets/images/icon_workout.png",
+                      "Workout Progress",
+                    ),
+                  ),
                 ],
               ),
             ),

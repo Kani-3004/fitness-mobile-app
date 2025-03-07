@@ -55,7 +55,6 @@ class _UserAccountdetailsProfilePageState
                     "Achievement",
                   ),
                   _buildAccountRow(
-<<<<<<< HEAD
                     "assets/images/icon_activity.png",
                     "Activity History",
                   ),
@@ -71,20 +70,6 @@ class _UserAccountdetailsProfilePageState
                       "assets/images/icon_workout.png",
                       "Workout Progress",
                     ),
-=======
-                      "assets/images/icon_activity.png", "Activity History"),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => WorkoutTrackerPage()
-                        )
-                      );
-                    },
-                    child: _buildAccountRow(
-                        "assets/images/icon_workout.png", "Workout Progress"),
->>>>>>> 80f66381fd6af4c23bcdbbf7075e0a5c5d6b8630
                   ),
                 ],
               ),

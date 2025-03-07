@@ -19,8 +19,13 @@ class _WorkoutChartPageState extends State<WorkoutChartPage> {
       enable: true,
       color: Colors.transparent,
       canShowMarker: false,
-      builder: (dynamic data, dynamic point, dynamic series, int pointIndex,
-          int seriesIndex) {
+      builder: (
+        dynamic data,
+        dynamic point,
+        dynamic series,
+        int pointIndex,
+        int seriesIndex,
+      ) {
         if (seriesIndex == 0) {
           return _customTooltip(data.days, data.value, "Upperbody Workout");
         } else {
@@ -82,7 +87,7 @@ class _WorkoutChartPageState extends State<WorkoutChartPage> {
   Widget _customTooltip(String days, double value, String workoutType) {
     return Container(
       height: 70,
-      width: 150,
+      width: 170,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -111,8 +116,11 @@ class _WorkoutChartPageState extends State<WorkoutChartPage> {
                       ),
                     ),
                     SizedBox(width: 4),
-                    Icon(Icons.arrow_upward,
-                        size: 12, color: Color(0xff42d742)),
+                    Icon(
+                      Icons.arrow_upward,
+                      size: 12,
+                      color: Color(0xff42d742),
+                    ),
                   ],
                 ),
               ],

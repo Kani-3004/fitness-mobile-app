@@ -16,9 +16,7 @@ class _CheckcardWorkoutPageState extends State<CheckcardWorkoutPage> {
       height: screenHeight * 0.08,
       child: Card(
         color: Color(0xffF5E1FB),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
@@ -26,36 +24,33 @@ class _CheckcardWorkoutPageState extends State<CheckcardWorkoutPage> {
             children: [
               Text(
                 'Daily Workout Schedule',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16
-                ),
+                style: TextStyle(color: Colors.black, fontSize: 16),
               ),
               Container(
-                width: 80,
+                width: 70,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(25),
                   gradient: LinearGradient(
-                    colors: [
-                      Color(0xffcc8fed),
-                      Color(0xff6b50f6)
-                    ]
-                  )
+                    colors: [Color(0xffcc8fed), Color(0xff6b50f6)],
+                  ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 6.0),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                    vertical: 3.0,
+                  ),
                   child: Center(
                     child: Text(
                       'Check',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 14
+                        fontSize: screenHeight * 0.015,
                       ),
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

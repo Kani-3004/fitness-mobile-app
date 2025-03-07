@@ -29,10 +29,7 @@ class _OnboardingOneState extends State<OnboardingOne> {
                   height: screenHeight * 0.5,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [
-                        Color(0xFFE38FD8),
-                        Color(0xFFC457F2),
-                      ],
+                      colors: [Color(0xFFE38FD8), Color(0xFFC457F2)],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),

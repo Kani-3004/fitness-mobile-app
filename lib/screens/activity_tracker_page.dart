@@ -161,7 +161,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: ActivityProgressTargetpage(),
+                  child: ActivityProgressTargetPage(),
                 ),
               ),
               Padding(
@@ -215,6 +215,9 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
   }
 
   void _showDropdownMenu(BuildContext context) async {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     final RenderBox renderBox = context.findRenderObject() as RenderBox;
     final Offset offset = renderBox.localToGlobal(Offset.zero);
 
@@ -224,9 +227,9 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
     String? newValue = await showMenu<String>(
       context: context,
       position: RelativeRect.fromLTRB(
-        offset.dx + 250,
-        offset.dy + 310,
-        offset.dx + 20,
+        offset.dx + screenWidth * 0.25,
+        offset.dy + screenHeight * 0.36,
+        offset.dx + screenWidth * 0.02,
         offset.dy + renderBox.size.height + (filteredOptions.length * 48),
       ),
       items:

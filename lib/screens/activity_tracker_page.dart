@@ -245,8 +245,10 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
         side: BorderSide(color: Color.fromARGB(255, 249, 250, 252), width: 1.5),
       ),
     );
-    setState(() {
-      selectedValue = newValue!;
-    });
+    if (newValue != null) {
+      setState(() {
+        selectedValue = newValue;
+      });
+    }
   }
 }

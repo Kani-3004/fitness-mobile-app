@@ -1,5 +1,4 @@
 import 'package:fitness_mobile_app/screens/bottomsheet_workout_page.dart';
-import 'package:fitness_mobile_app/screens/home_page_template.dart';
 import 'package:fitness_mobile_app/screens/workout_chart_page.dart';
 import 'package:flutter/material.dart';
 
@@ -51,11 +50,7 @@ class _WorkoutTrackerPageState extends State<WorkoutTrackerPage> {
                           ),
                           child: IconButton(
                             onPressed: () {
-                              Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                  builder: (context) => HomePageTemplate(),
-                                ),
-                              );
+                              Navigator.of(context).pop();
                             },
                             icon: Icon(
                               Icons.arrow_back_ios_new_rounded,

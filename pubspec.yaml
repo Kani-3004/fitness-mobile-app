@@ -32,7 +32,7 @@ flutter_icons:
   ios: true
   image_path: "assets/images/barbell.png"  # Your icon image path
   adaptive_icon_foreground: "assets/images/barbell.png"  # (For Android adaptive icons)
-  adaptive_icon_background: "#ffffff"  # Change background color if needed
+ 
 
 dependencies:
   flutter:

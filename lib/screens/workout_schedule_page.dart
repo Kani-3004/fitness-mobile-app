@@ -1,6 +1,5 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:fitness_mobile_app/screens/home_page_template.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class WorkoutSchedulePage extends StatefulWidget {
@@ -33,9 +32,7 @@ class _WorkoutSchedulePageState extends State<WorkoutSchedulePage> {
               ),
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => HomePageTemplate()),
-                  );
+                  Navigator.pop(context);
                 },
                 icon: Icon(Icons.arrow_back_ios_new_rounded, size: 15),
               ),
@@ -132,6 +129,9 @@ class _WorkoutSchedulePageState extends State<WorkoutSchedulePage> {
                   headerHeight: 0,
                   viewHeaderHeight: 0,
                   showDatePickerButton: false,
+                  allowDragAndDrop: false,
+                  allowViewNavigation: false,
+                  allowAppointmentResize: false,
                   showWeekNumber: false,
                   showTodayButton: false,
                   showCurrentTimeIndicator: true,

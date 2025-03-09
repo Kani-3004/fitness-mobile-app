@@ -32,96 +32,95 @@ class _HomePageTemplateState extends State<HomePageTemplate> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: pages[selectedIndex],
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.white,
-          shape: CircularNotchedRectangle(),
-          notchMargin: 5,
-          clipBehavior: Clip.none,
-          child: Container(
-            height: 60,
+    return PopScope(
+      canPop: selectedIndex == 0, // Allow exit only when on HomePage
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop && selectedIndex != 0) {
+          setState(() {
+            selectedIndex = 0; // Navigate back to HomePage
+          });
+        }
+      },
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          body: pages[selectedIndex],
+          bottomNavigationBar: BottomAppBar(
+            color: Colors.white,
+            shape: CircularNotchedRectangle(),
+            notchMargin: 5,
+            clipBehavior: Clip.none,
+            child: Container(
+              height: 60,
+              decoration: BoxDecoration(color: Colors.white),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    icon: ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                        selectedIndex == 0 ? Colors.purple : Colors.grey,
+                        BlendMode.srcIn,
+                      ),
+                      child: Image.asset("assets/images/home.png"),
+                    ),
+                    onPressed: () => _onItemTapped(0),
+                  ),
+                  IconButton(
+                    icon: ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                        selectedIndex == 1 ? Colors.purple : Colors.grey,
+                        BlendMode.srcIn,
+                      ),
+                      child: Image.asset("assets/images/activity.png"),
+                    ),
+                    onPressed: () {},
+                  ),
+                  SizedBox(width: 48),
+                  IconButton(
+                    icon: ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                        selectedIndex == 3 ? Colors.purple : Colors.grey,
+                        BlendMode.srcIn,
+                      ),
+                      child: Image.asset("assets/images/camera.png"),
+                    ),
+                    onPressed: () => _onItemTapped(3),
+                  ),
+                  IconButton(
+                    icon: ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                        selectedIndex == 4 ? Colors.purple : Colors.grey,
+                        BlendMode.srcIn,
+                      ),
+                      child: Image.asset("assets/images/profile.png"),
+                    ),
+                    onPressed: () => _onItemTapped(4),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          floatingActionButton: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [Color(0xFF825FF5), Color(0xFFA677F2)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  icon: ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      selectedIndex == 0 ? Colors.purple : Colors.grey,
-                      BlendMode.srcIn,
-                    ),
-                    child: Image.asset("assets/images/home.png"),
-                  ),
-                  onPressed: () => _onItemTapped(0),
-                ),
-                IconButton(
-                  icon: ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      selectedIndex == 1 ? Colors.purple : Colors.grey,
-                      BlendMode.srcIn,
-                    ),
-                    child: Image.asset("assets/images/activity.png"),
-                  ),
-                  onPressed: () {
-                    // Navigator.of(context).pushReplacement(
-                    //   MaterialPageRoute(
-                    //     builder: (context) => ActivityTrackerPage(),
-                    //   ),
-                    // );
-                  },
-                  // onPressed: () => _onItemTapped(1),
-                ),
-                SizedBox(width: 48),
-                IconButton(
-                  icon: ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      selectedIndex == 3 ? Colors.purple : Colors.grey,
-                      BlendMode.srcIn,
-                    ),
-                    child: Image.asset("assets/images/camera.png"),
-                  ),
-                  onPressed: () => _onItemTapped(3),
-                ),
-                IconButton(
-                  icon: ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      selectedIndex == 4 ? Colors.purple : Colors.grey,
-                      BlendMode.srcIn,
-                    ),
-                    child: Image.asset("assets/images/profile.png"),
-                  ),
-                  onPressed: () => _onItemTapped(4),
-                ),
-              ],
+            child: FloatingActionButton(
+              backgroundColor: Colors.transparent,
+              shape: CircleBorder(),
+              onPressed: () {},
+              elevation: 0,
+              child: Image.asset("assets/images/search.png"),
             ),
           ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
         ),
-        floatingActionButton: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: LinearGradient(
-              colors: [
-                Color(0xFF825FF5),
-                Color(0xFFA677F2),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: FloatingActionButton(
-            backgroundColor: Colors.transparent,
-            shape: CircleBorder(),
-            onPressed: () {},
-            elevation: 0,
-            child: Image.asset("assets/images/search.png"),
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:fitness_mobile_app/screens/workout_schedule_page.dart';
 import 'package:flutter/material.dart';
 
 class CheckcardWorkoutPage extends StatefulWidget {
@@ -26,26 +27,36 @@ class _CheckcardWorkoutPageState extends State<CheckcardWorkoutPage> {
                 'Daily Workout Schedule',
                 style: TextStyle(color: Colors.black, fontSize: 16),
               ),
-              Container(
-                width: 70,
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(25),
-                  gradient: LinearGradient(
-                    colors: [Color(0xffcc8fed), Color(0xff6b50f6)],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WorkoutSchedulePage(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 70,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(25),
+                    gradient: LinearGradient(
+                      colors: [Color(0xffcc8fed), Color(0xff6b50f6)],
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 3.0,
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Check',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: screenHeight * 0.015,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                      vertical: 3.0,
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Check',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: screenHeight * 0.015,
+                        ),
                       ),
                     ),
                   ),

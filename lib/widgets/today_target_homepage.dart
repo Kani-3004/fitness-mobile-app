@@ -18,10 +18,7 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(screenWidth * 0.05),
         gradient: LinearGradient(
-          colors: [
-            Color(0xFFFAE8F7),
-            Color(0xFFF2DCFC),
-          ],
+          colors: [Color(0xFFFAE8F7), Color(0xFFF2DCFC)],
         ),
       ),
       child: Padding(
@@ -39,23 +36,18 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.of(context).pushReplacement(
+                Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => ActivityTrackerPage(),
                   ),
                 );
               },
               child: Container(
-                constraints: BoxConstraints(
-                  minHeight: screenHeight * 0.04,
-                ),
+                constraints: BoxConstraints(minHeight: screenHeight * 0.04),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(screenWidth * 0.045),
                   gradient: LinearGradient(
-                    colors: [
-                      Color(0xFF805DF5),
-                      Color(0xFFA675F0),
-                    ],
+                    colors: [Color(0xFF805DF5), Color(0xFFA675F0)],
                   ),
                 ),
                 child: Padding(
@@ -73,7 +65,7 @@ class _TodayTargetHomepageState extends State<TodayTargetHomepage> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

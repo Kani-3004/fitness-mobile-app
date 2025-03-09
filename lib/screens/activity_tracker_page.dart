@@ -1,4 +1,3 @@
-import 'package:fitness_mobile_app/screens/home_page_template.dart';
 import 'package:fitness_mobile_app/screens/today_target_tracker_page.dart';
 import 'package:fitness_mobile_app/widgets/activity_progress_targetpage.dart';
 import 'package:fitness_mobile_app/widgets/latest_activity_targetpage.dart';
@@ -36,9 +35,7 @@ class _ActivityTrackerPageState extends State<ActivityTrackerPage> {
               ),
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => HomePageTemplate()),
-                  );
+                  Navigator.of(context).pop();
                 },
                 icon: Icon(Icons.arrow_back_ios_new_rounded, size: 15),
               ),

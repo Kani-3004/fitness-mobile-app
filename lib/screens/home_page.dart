@@ -24,7 +24,9 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: Padding(
           padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width * 0.02, top: 8.0),
+            left: MediaQuery.of(context).size.width * 0.02,
+            top: 8.0,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -48,13 +50,13 @@ class _HomePageState extends State<HomePage> {
         actions: [
           Padding(
             padding: EdgeInsets.only(
-                right: MediaQuery.of(context).size.width * 0.02, top: 8.0),
+              right: MediaQuery.of(context).size.width * 0.02,
+              top: 8.0,
+            ),
             child: IconButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => NotificationPage(),
-                  ),
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => NotificationPage()),
                 );
               },
               icon: Container(
@@ -90,16 +92,11 @@ class _HomePageState extends State<HomePage> {
                   width: double.infinity,
                   child: Column(
                     children: [
-                      Flexible(
-                        flex: 2,
-                        child: BmiCardHomepage(),
-                      ),
+                      Flexible(flex: 2, child: BmiCardHomepage()),
                       SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Flexible(
-                        flex: 1,
-                        child: TodayTargetHomepage(),
-                      )
+                        height: MediaQuery.of(context).size.height * 0.03,
+                      ),
+                      Flexible(flex: 1, child: TodayTargetHomepage()),
                     ],
                   ),
                 ),
@@ -109,7 +106,8 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.01),
+                      left: MediaQuery.of(context).size.width * 0.01,
+                    ),
                     child: Text(
                       "Activity Status",
                       style: TextStyle(
@@ -128,30 +126,22 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                   child: Column(
                     children: [
-                      Flexible(
-                        flex: 1,
-                        child: HeartrateCardHomepage(),
-                      ),
+                      Flexible(flex: 1, child: HeartrateCardHomepage()),
                       SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.02),
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
                       Flexible(
                         flex: 1,
                         child: Row(
                           children: [
-                            Expanded(
-                              flex: 1,
-                              child: WaterIntakeHomepage(),
-                            ),
+                            Expanded(flex: 1, child: WaterIntakeHomepage()),
                             SizedBox(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.04),
-                            Expanded(
-                              flex: 1,
-                              child: SleepCardHomepage(),
-                            )
+                              width: MediaQuery.of(context).size.width * 0.04,
+                            ),
+                            Expanded(flex: 1, child: SleepCardHomepage()),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

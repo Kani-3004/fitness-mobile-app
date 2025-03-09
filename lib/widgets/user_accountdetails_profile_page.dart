@@ -60,7 +60,7 @@ class _UserAccountdetailsProfilePageState
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => WorkoutTrackerPage(),
                         ),

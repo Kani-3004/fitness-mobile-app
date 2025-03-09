@@ -18,17 +18,15 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
 
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 0.0,horizontal: 8.0),
+        padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 8.0),
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
+            scrolledUnderElevation: 0,
             backgroundColor: Colors.white,
             centerTitle: true,
             leading: Padding(
-              padding: EdgeInsets.only(
-                top: 16.0,
-                left: 16.0,
-              ),
+              padding: EdgeInsets.only(top: 16.0, left: 16.0),
               child: Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
@@ -79,15 +77,17 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
             child: Column(
               children: [
                 ReminderCardProgressPhotoPage(),
-                SizedBox(height: 20,),
+                SizedBox(height: 20),
                 TrackProgressCardProgressPhoto(),
-                SizedBox(height: 25,),
+                SizedBox(height: 25),
                 CompareCardProgressPhoto(),
-                SizedBox(height: 5,),
+                SizedBox(height: 5),
                 Expanded(
                   child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16.0,
+                      horizontal: 12.0,
+                    ),
                     child: Container(
                       color: Colors.white,
                       child: Column(
@@ -100,17 +100,19 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
                               Text(
                                 'Gallery',
                                 style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: screenHeight * 0.02,
-                                    fontWeight: FontWeight.w600),
+                                  color: Colors.black,
+                                  fontSize: screenHeight * 0.02,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                               Text(
                                 'See more',
                                 style: TextStyle(
-                                    color: Color(0xffa5a3b0),
-                                    fontSize: screenHeight * 0.015,
-                                    fontWeight: FontWeight.w500),
-                              )
+                                  color: Color(0xffa5a3b0),
+                                  fontSize: screenHeight * 0.015,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ],
                           ),
                           Expanded(
@@ -118,15 +120,18 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
                               child: Column(
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 16.0),
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 16.0,
+                                    ),
                                     child: Align(
                                       alignment: Alignment.topLeft,
                                       child: Text(
                                         '2 June',
                                         style: TextStyle(
-                                            color: Color(0xffb6b4c2),
-                                            fontSize: screenHeight * 0.015,
-                                            fontWeight: FontWeight.w400),
+                                          color: Color(0xffb6b4c2),
+                                          fontSize: screenHeight * 0.015,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -135,38 +140,53 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
                                     child: Row(
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5834.png'),
+                                            'assets/images/Rectangle 5834.png',
+                                          ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5836.png'),
+                                            'assets/images/Rectangle 5836.png',
+                                          ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5835.png'),
+                                            'assets/images/Rectangle 5835.png',
+                                          ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5838.png'),
+                                            'assets/images/Rectangle 5838.png',
+                                          ),
                                         ),
                                       ],
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 16.0),
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 16.0,
+                                    ),
                                     child: Align(
                                       alignment: Alignment.topLeft,
                                       child: Text(
                                         '5 May',
                                         style: TextStyle(
-                                            color: Color(0xffb6b4c2),
-                                            fontSize: screenHeight * 0.015,
-                                            fontWeight: FontWeight.w400),
+                                          color: Color(0xffb6b4c2),
+                                          fontSize: screenHeight * 0.015,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -175,24 +195,36 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
                                     child: Row(
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5838.png'),
+                                            'assets/images/Rectangle 5838.png',
+                                          ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5841.png'),
+                                            'assets/images/Rectangle 5841.png',
+                                          ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5839.png'),
+                                            'assets/images/Rectangle 5839.png',
+                                          ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0,
+                                          ),
                                           child: Image.asset(
-                                              'assets/images/Rectangle 5834.png'),
+                                            'assets/images/Rectangle 5834.png',
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -200,12 +232,12 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
                                 ],
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

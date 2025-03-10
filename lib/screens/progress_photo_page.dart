@@ -14,7 +14,7 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
-    // final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenWidth = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Padding(
@@ -25,24 +25,24 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
             scrolledUnderElevation: 0,
             backgroundColor: Colors.white,
             centerTitle: true,
-            leading: Padding(
-              padding: EdgeInsets.only(top: 16.0, left: 16.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xffF7F8F8),
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    // Navigator.of(context).pushReplacement(
-                    //   MaterialPageRoute(builder: (context) => HomePageTemplate()),
-                    // );
-                  },
-                  icon: Icon(Icons.arrow_back_ios_new_rounded, size: 15),
-                ),
-              ),
-            ),
+            // leading: Padding(
+            //   padding: EdgeInsets.only(top: 16.0, left: 16.0),
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       shape: BoxShape.rectangle,
+            //       borderRadius: BorderRadius.circular(10),
+            //       color: Color(0xffF7F8F8),
+            //     ),
+            //     child: IconButton(
+            //       onPressed: () {
+            //         // Navigator.of(context).pushReplacement(
+            //         //   MaterialPageRoute(builder: (context) => HomePageTemplate()),
+            //         // );
+            //       },
+            //       icon: Icon(Icons.arrow_back_ios_new_rounded, size: 15),
+            //     ),
+            //   ),
+            // ),
             title: Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: Text(
@@ -57,23 +57,26 @@ class _ProgressPhotoPageState extends State<ProgressPhotoPage> {
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(top: 16.0, right: 16.0),
+                padding: const EdgeInsets.only(top: 16.0, right: 8.0),
                 child: Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(10),
-                    color: Color(0xffF7F8F8),
+                    color: const Color(0xffF7F8F8),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset('assets/images/Detail-Navs.png'),
+                    padding: EdgeInsets.all(screenWidth * 0.02),
+                    child: Image.asset(
+                      'assets/images/Detail-Navs.png',
+                      width: screenWidth * 0.06,
+                    ),
                   ),
                 ),
               ),
             ],
           ),
           body: Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+            padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
             child: Column(
               children: [
                 ReminderCardProgressPhotoPage(),

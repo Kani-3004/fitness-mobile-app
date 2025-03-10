@@ -19,7 +19,6 @@ class _ProfilePageState extends State<ProfilePage> {
     final double screenHeight = screenSize.height;
     final double screenWidth = screenSize.width;
     final double padding = screenWidth * 0.04;
-    final double iconSize = screenWidth * 0.04;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -27,23 +26,23 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
         centerTitle: true,
-        leading: Padding(
-          padding: EdgeInsets.only(top: padding, left: padding),
-          child: Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(10),
-              color: const Color(0xffF7F8F8),
-            ),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.arrow_back_ios_new_rounded,
-                size: iconSize,
-              ),
-            ),
-          ),
-        ),
+        // leading: Padding(
+        //   padding: EdgeInsets.only(top: padding, left: padding),
+        //   child: Container(
+        //     decoration: BoxDecoration(
+        //       shape: BoxShape.rectangle,
+        //       borderRadius: BorderRadius.circular(10),
+        //       color: const Color(0xffF7F8F8),
+        //     ),
+        //     child: IconButton(
+        //       onPressed: () {},
+        //       icon: Icon(
+        //         Icons.arrow_back_ios_new_rounded,
+        //         size: iconSize,
+        //       ),
+        //     ),
+        //   ),
+        // ),
         title: Padding(
           padding: EdgeInsets.only(top: padding),
           child: Text(

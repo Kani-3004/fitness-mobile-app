@@ -18,10 +18,7 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(screenWidth * 0.05),
         gradient: LinearGradient(
-          colors: [
-            Color(0xFFE391D5),
-            Color(0xFFC355F2),
-          ],
+          colors: [Color(0xFFE391D5), Color(0xFFC355F2)],
         ),
       ),
       child: Padding(
@@ -53,13 +50,11 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(screenWidth * 0.045),
+                        borderRadius: BorderRadius.circular(
+                          screenWidth * 0.045,
+                        ),
                         gradient: LinearGradient(
-                          colors: [
-                            Color(0xFF805DF5),
-                            Color(0xFFA675F0),
-                          ],
+                          colors: [Color(0xFF805DF5), Color(0xFFA675F0)],
                         ),
                       ),
                       child: Padding(
@@ -68,7 +63,7 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
                           horizontal: screenWidth * 0.04,
                         ),
                         child: Text(
-                          "View more",
+                          "View More",
                           style: TextStyle(
                             fontSize: screenWidth * 0.032,
                             color: Colors.white,
@@ -76,7 +71,7 @@ class _BmiCardHomepageState extends State<BmiCardHomepage> {
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -83,7 +83,7 @@ class _TrackProgressCardProgressPhotoState
                           child: Align(
                             alignment: Alignment.center,
                             child: Text(
-                              'Learn more',
+                              'Learn More',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: screenHeight * 0.015,

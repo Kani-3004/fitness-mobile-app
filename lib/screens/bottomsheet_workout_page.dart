@@ -60,7 +60,7 @@ class _BottomsheetWorkoutPageState extends State<BottomsheetWorkoutPage> {
                               ),
                             ),
                             Text(
-                              'see more',
+                              'See more',
                               style: TextStyle(
                                 color: Color(0xffa5a3b0),
                                 fontSize: 14,
